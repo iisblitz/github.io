@@ -4,32 +4,119 @@ body {
 }
 
 .welcome {
-  background-color: darkgray;
+  background-color: rgb(50, 50, 50);
+  border-color: yellow;
   height: 15vh;
   width: 90vw;
-  margin: 0 auto;
+  margin: 3rem auto;
   padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.Wbuttons {
+  height: wrap-content;
+  width: 25%;
 }
 .welcome h1 {
-  margin: 0;
+  margin: auto;
   padding: 0;
 }
+.welcome button {
+  background-color: black;
+  color: white;
+  margin: 0 5%;
+  border-radius: 15%;
+  border: 1px solid yellow;
+}
+.welcome button:hover {
+  color: yellow;
+}
+
 .about {
   width: 100%;
 }
 .profile {
   display: flex;
   flex-direction: row;
-  width: 95vw;
+  width: 90vw;
   margin: 1% auto;
   justify-content: space-around;
 }
 
 .profile img {
-  width: 20vw;
-  height: auto;
+  width: 20%;
+  height: 20%;
+  margin: auto;
+  border-radius: 50%;
 }
 .data {
-  width: 90%;
+  width: 65%;
+  height: auto;
   margin-left: 10%;
+}
+
+i {
+  color: aliceblue;
+}
+
+a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(30, 30, 30);
+  width: 95vw;
+  height: 40rem;
+  margin: 10% auto;
+  flex-direction: row;
+  border-color: white;
+  border-radius: 1rem;
+  flex-wrap: wrap;
+}
+
+.timeline .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+.timeline button {
+  border-color: yellow;
+  border-radius: 1rem;
+  padding: 0.2rem;
+  margin: 0.4rem;
+  background-color: black;
+  color: white;
+}
+
+.timeline button:hover {
+  border-color: yellow;
+  color: yellow;
+}
+
+.timeline .canva {
+  border-color: aliceblue;
+  border-radius: 1rem;
+  width: 98%;
+  height: 80%;
+  background-color: rgb(50, 50, 50);
+  margin: auto;
 }

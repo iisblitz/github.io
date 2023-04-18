@@ -1,15 +1,16 @@
-import '../styles.css'
-import Welcome from '../components/Welcome';
-import About from '../components/About';
+import React from 'react'
 
-const LandingPage = () => {
-    return (<div>
-        <Welcome/>
-        <About/>
-        
+class LandingPage extends React.Component{
+    constructor(props){
+        super(props);
+    }
+    render(){  
+    return (
+        <div>LandingPage</div>
+            )}
+            
 
 
-    </div>  );
 }
- 
-export default LandingPage;
+
+export default LandingPage

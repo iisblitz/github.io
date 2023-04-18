@@ -9,7 +9,6 @@ import Projects from './pages/Projects'
 
 function App() {
   return (
-    
     <Router>
       <Routes>
         <Route path='/' element={<LandingPage/>}></Route>
@@ -20,7 +19,6 @@ function App() {
         <Route path='/Projects' element={<Projects/>}></Route>
       </Routes>
     </Router>
-
   );
 }
 
