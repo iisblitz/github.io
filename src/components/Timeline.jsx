@@ -7,6 +7,7 @@ import logo4 from '../recursos/federal.png'
 import logo5 from '../recursos/teva.png'
 
 const Timeline = () => {
+
     return (
         
         <div className='Timeline-Window'>
