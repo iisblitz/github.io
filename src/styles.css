@@ -82,9 +82,9 @@ a {
   display: flex;
   flex-direction: column;
   background-color: rgb(30, 30, 30);
-  width: 95vw;
+  width: 90vw;
   height: 40rem;
-  margin: 10% auto;
+  margin: auto;
   flex-direction: row;
   border-color: white;
   border-radius: 1rem;
@@ -119,4 +119,73 @@ a {
   height: 80%;
   background-color: rgb(50, 50, 50);
   margin: auto;
+}
+.Timeline-Window {
+  height: 80vh;
+  overflow-y: scroll;
+}
+
+i {
+  margin: auto;
+}
+.TL-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  border-color: white;
+}
+.TL-Img1 {
+  flex-wrap: wrap;
+  margin: 0;
+  border: 0;
+  justify-content: center;
+}
+
+.TL-Img2 {
+  flex-wrap: wrap;
+  width: 40%;
+  margin: 0;
+  border: 0;
+  justify-content: center;
+}
+
+.TL-Img3 {
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 0;
+  border: 0;
+  justify-content: center;
+}
+.TL-Img4 {
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 0;
+  border: 0;
+  justify-content: center;
+}
+.TL-Img5 {
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 0;
+  border: 0;
+  justify-content: center;
+}
+.TL-Menu {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+}
+
+.TL-Menu button {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  border-color: white;
+  color: white;
+  border-radius: 10%;
+  border-spacing: 1rem;
+}
+.TL-Menu button:hover {
+  border-color: yellow;
 }
