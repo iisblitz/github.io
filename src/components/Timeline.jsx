@@ -9,7 +9,7 @@ import logo5 from '../recursos/teva.png'
 const Timeline = () => {
 
     return (
-        
+        //poniendo texto aleatorio para que se actualice el github pages
         <div className='Timeline-Window'>
         <div className="TL-Menu">
             <button onClick=""> <i class="fa-solid fa-industry"/>Work Experience</button>
