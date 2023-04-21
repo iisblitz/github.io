@@ -12,7 +12,7 @@ class LandingPage extends React.Component{
         }
 
         this.handleClick = this.handleClick.bind(this)
-
+      
 }
 
 handleClick(num){this.setState({index: num})} 
@@ -27,8 +27,6 @@ handleClick(num){this.setState({index: num})}
         
         </div>
             )}
-
-
 
 }
 

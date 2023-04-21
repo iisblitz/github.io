@@ -8,11 +8,30 @@ import logo5 from '../recursos/teva.png'
 
 const Timeline = () => {
 
+let state={
+    showExp:true,
+    showHobs:false,
+    showProy:false,
+    showEdu:false
+}
+
+
+
+let handleToggle=()=>{
+    this.setState(state=>{
+        if(state.showExp === true){
+            return {showExp:false}
+        }else{
+            return {showExp:true}
+        }
+    })
+
+}
     return (
         //poniendo texto aleatorio para que se actualice el github pages
         <div className='Timeline-Window'>
         <div className="TL-Menu">
-            <button onClick=""> <i class="fa-solid fa-industry"/>Work Experience</button>
+            <button onClick={e=> this.state.handleToggle(e)}> <i class="fa-solid fa-industry"/>Work Experience</button>
             <button onClick=""> <i class="fa-solid fa-school"/>Education</button>
             <button onClick="">  <i class="fa-solid fa-mug-saucer"/>Projects</button>
             <button onClick="">  <i class="fa-solid fa-person-walking-luggage"/>Hobbies</button>
@@ -20,7 +39,7 @@ const Timeline = () => {
         
         <VerticalTimeline>
 
-
+{state.showExp?
   <VerticalTimelineElement
     className="vertical-timeline-element--work"
     contentStyle={{ background: 'rgb(0,0,0)', color: '#fff' }}
@@ -44,7 +63,7 @@ const Timeline = () => {
     </div>
     </div>
   </VerticalTimelineElement>
-  
+  :<div/>}
 
 
   <VerticalTimelineElement
