@@ -43,6 +43,7 @@ body {
   width: 90vw;
   margin: 1% auto;
   justify-content: space-around;
+  font-size: 1rem;
 }
 
 .profile img {
@@ -188,4 +189,12 @@ i {
 }
 .TL-Menu button:hover {
   border-color: yellow;
+}
+
+@media only screen and (max-width: 799px) {
+  .about {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+  }
 }

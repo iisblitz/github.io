@@ -1,45 +1,51 @@
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import logo1 from '../recursos/arracheras.png'
-import logo2 from '../recursos/guanacastle.png'
-import logo3 from '../recursos/bostons.png'
-import logo4 from '../recursos/federal.png'
-import logo5 from '../recursos/teva.png'
+import logo1 from '../recursos/Logos/ARREL.png'
+import logo2 from '../recursos/Logos/GUANACASTLE.png'
+import logo3 from '../recursos/Logos/BOSTONS.png'
+import logo4 from '../recursos/Logos/FEDERAL.png'
+import logo5 from '../recursos/Logos/TEVA.png'
+import React from 'react';
 
-const Timeline = () => {
+class Timeline extends React.Component {
+  constructor (props) {
+    super (props);
+  
+    this.state={
+      showExp:true,
+      showHobs:false,
+      showProy:false,
+      showEdu:false
+    }
+    this.handleToggle = this.handleToggle.bind(this)
+  }
 
-let state={
-    showExp:true,
-    showHobs:false,
-    showProy:false,
-    showEdu:false
-}
-
-
-
-let handleToggle=()=>{
+  handleToggle=(e)=>{
     this.setState(state=>{
-        if(state.showExp === true){
-            return {showExp:false}
+      let checker = e.target.value
+        if(state[checker] === true){
+          return {[checker]:false}
         }else{
-            return {showExp:true}
+          return {[checker]:true}
         }
     })
-
 }
+
+
+render(){
     return (
         //poniendo texto aleatorio para que se actualice el github pages
         <div className='Timeline-Window'>
         <div className="TL-Menu">
-            <button onClick={e=> this.state.handleToggle(e)}> <i class="fa-solid fa-industry"/>Work Experience</button>
-            <button onClick=""> <i class="fa-solid fa-school"/>Education</button>
-            <button onClick="">  <i class="fa-solid fa-mug-saucer"/>Projects</button>
-            <button onClick="">  <i class="fa-solid fa-person-walking-luggage"/>Hobbies</button>
+            <button onClick={e=> this.handleToggle(e)} value="showExp"><i className="fa-solid fa-industry"/>Work Experience</button>
+            <button onClick={e=> this.handleToggle(e)} value="showEdu"><i className="fa-solid fa-school"/>Education</button>
+            <button onClick={e=> this.handleToggle(e)} value="showProy"><i className="fa-solid fa-mug-saucer"/>Projects</button>
+            <button onClick={e=> this.handleToggle(e)} value="showHobs"><i className="fa-solid fa-person-walking-luggage"/>Hobbies</button>
         </div>
         
         <VerticalTimeline>
 
-{state.showExp?
+{this.state.showExp?
   <VerticalTimelineElement
     className="vertical-timeline-element--work"
     contentStyle={{ background: 'rgb(0,0,0)', color: '#fff' }}
@@ -192,7 +198,7 @@ let handleToggle=()=>{
 </VerticalTimeline>
 </div>
     );
-}
+}}
  
 export default Timeline;
 
