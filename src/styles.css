@@ -190,11 +190,3 @@ i {
 .TL-Menu button:hover {
   border-color: yellow;
 }
-
-@media only screen and (max-width: 799px) {
-  .about {
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
-  }
-}
