@@ -70,19 +70,18 @@ class Timeline extends React.Component {
               icon={<i className="fa-solid fa-industry"></i>}
             >
               
-              <div className="TL-container">
+              <a href={`portfolio/${e.name}`} className="TL-container">
                 <div className="TL-Img 1">
                   <img src={e.image} alt="resource loading 1" width="80%" />
                 </div>
                 <div className="TL-Text">
                 
-                  <h2 className="vertical-timeline-element-title">{e.name}</h2>
-                  <h3 className="vertical-timeline-element-title">{e.businessName}</h3>
-                  <p> {e.category} </p>
+                  <h3 className="vertical-timeline-element-title">{e.name}</h3>
+                  <h3 className="vertical-timeline-element-subtitle">{e.businessName}</h3>
                   <h4 className="vertical-timeline-element-subtitle">{e.location}</h4>
                   <p>{e.description}</p>
                 </div>
-              </div>
+              </a>
             </VerticalTimelineElement>
 
       ))}

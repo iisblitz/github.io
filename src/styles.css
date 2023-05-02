@@ -193,3 +193,13 @@ i {
 h2 .vertical-timeline-element-title {
   color: white;
 }
+
+.Footer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: 0%;
+  justify-content: center;
+  text-align: center;
+  left: 33%;
+}
