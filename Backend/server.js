@@ -1,31 +1,64 @@
 const express = require('express');
-const cors = require('cors');
-const mongoose = require('mongoose');
-require('dotenv').config();
+const exp = express();
+const { initializeApp } = require('firebase/app');
+const { getFirestore, collection, getDocs, addDoc, deleteDoc } = require('firebase/firestore');
+const bP = require('body-parser')
 
-const app = express();
-const port = process.env.PORT || 5001;
-const uri = process.env.MONGODB_URI;
+exp.use(bP.json())
 
-app.use(cors());
-app.use(express.json());
+const firebaseConfig = {
+  apiKey: "AIzaSyCBvMG8Ne9hMURKaO6VZnfORy1Mz05VkBs",
+  authDomain: "davidgonzalez-1e347.firebaseapp.com",
+  projectId: "davidgonzalez-1e347",
+  storageBucket: "davidgonzalez-1e347.appspot.com",
+  messagingSenderId: "386061872411",
+  appId: "1:386061872411:web:9546089e1d67ee727237be"
+};
+initializeApp(firebaseConfig)
+const db = getFirestore()
 
-mongoose.connect(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  });
-  
-const connection = mongoose.connection;
-connection.once('open', () => {
-  console.log('MongoDB database connection established successfully');
+exp.get('/', async (req, res) => {
+  const colRef = collection(db, 'Timeline');
+  const snapshot = await getDocs(colRef);
+  const events = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+  res.json(events);
 });
 
-const articleRouter = require('./Articles.model');
-const timelineRouter = require('./Timeline.model');
+exp.post('/add', async (req, res) => {
+  const { language, image, category, name, location, businessName, description, begin, end } = req.body;
+  try {
+    const docRef = await addDoc(collection(db, 'Timeline'), {
+      language,
+      image,
+      category,
+      name,
+      location,
+      businessName,
+      description,
+      begin,
+      end,
+    });
+    res.json({ message: `Document written with ID: ${docRef.id}` }); // return a response
+    console.log(docRef)
+  } catch (error) {
+    console.error('Error adding document: ', error);
+    res.json({ error: 'Error adding document' }); // return a response
+  }
+});
 
-app.use('/article', articleRouter);
-app.use('/timeline', timelineRouter);
 
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+exp.delete('/delete', async (req, res) => {
+  const id = req.body.id;
+  
+  try {
+    await deleteDoc(doc(db, "Timeline", id));
+    res.json({ message: `Document with id ${id} successfully deleted` });
+  } catch (error) {
+    console.error("Error deleting document: ", error);
+    res.status(500).json({ message: `Error deleting document with id ${id}` });
+  }
+});
+
+exp.listen(3001, () => {
+  console.log('Server listening on port 3001');
 });

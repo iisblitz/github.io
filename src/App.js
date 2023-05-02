@@ -6,6 +6,7 @@ import LandingPage from './pages/LandingPage'
 import Experiences from './pages/Experiences'
 import Hobbies from './pages/Hobbies'
 import Projects from './pages/Projects'
+import Maintenance from './pages/Maintenance'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/Experiences' element={<Experiences/>}></Route>
         <Route path='/Hobbies'element={<Hobbies/>}></Route>
         <Route path='/Projects' element={<Projects/>}></Route>
+        <Route path='/Maintenance' element={<Maintenance/>}></Route>
       </Routes>
     </Router>
   );
