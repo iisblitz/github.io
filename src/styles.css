@@ -190,3 +190,6 @@ i {
 .TL-Menu button:hover {
   border-color: yellow;
 }
+h2 .vertical-timeline-element-title {
+  color: white;
+}

@@ -1,6 +1,8 @@
 import {createStore, applyMiddleware, compose} from 'redux'
 import thunk from 'redux-thunk'
 import rootReducer from './reducer';
+import { loadData } from './actions';
+
 
 
 const composeEnhancers =
@@ -13,4 +15,11 @@ const store = createStore(
     composeEnhancers(applyMiddleware(thunk)),
 );
 
+store.dispatch(loadData());
+
+
 export default store;
+
+  
+
+  

@@ -3,8 +3,15 @@ const exp = express();
 const { initializeApp } = require('firebase/app');
 const { getFirestore, collection, getDocs, addDoc, deleteDoc } = require('firebase/firestore');
 const bP = require('body-parser')
+const cors = require('cors')
+
+const corsOptions = {
+  origin: ['http://localhost:3001', 'http://localhost:3000'],
+};
+exp.use(cors(corsOptions));
 
 exp.use(bP.json())
+exp.use(cors())
 
 const firebaseConfig = {
   apiKey: "AIzaSyCBvMG8Ne9hMURKaO6VZnfORy1Mz05VkBs",
