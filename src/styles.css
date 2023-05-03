@@ -18,6 +18,7 @@ body {
 .Wbuttons {
   height: wrap-content;
   width: 25%;
+  margin: 0 auto;
 }
 .welcome h1 {
   margin: auto;
@@ -56,6 +57,11 @@ body {
   width: 65%;
   height: auto;
   margin-left: 10%;
+  text-align: justify;
+}
+
+.data h1 {
+  text-align: center;
 }
 
 i {
@@ -136,42 +142,15 @@ i {
   align-items: center;
   border-color: white;
 }
-.TL-Img1 {
+.TL-text {
+  width: 75%;
+}
+.TL-Img {
   flex-wrap: wrap;
-  margin: 0;
-  border: 0;
   justify-content: center;
+  width: 100%;
 }
 
-.TL-Img2 {
-  flex-wrap: wrap;
-  width: 40%;
-  margin: 0;
-  border: 0;
-  justify-content: center;
-}
-
-.TL-Img3 {
-  flex-wrap: wrap;
-  width: 50%;
-  margin: 0;
-  border: 0;
-  justify-content: center;
-}
-.TL-Img4 {
-  flex-wrap: wrap;
-  width: 50%;
-  margin: 0;
-  border: 0;
-  justify-content: center;
-}
-.TL-Img5 {
-  flex-wrap: wrap;
-  width: 50%;
-  margin: 0;
-  border: 0;
-  justify-content: center;
-}
 .TL-Menu {
   display: flex;
   justify-content: space-around;

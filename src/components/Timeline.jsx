@@ -70,8 +70,8 @@ class Timeline extends React.Component {
               icon={<i className="fa-solid fa-industry"></i>}
             >
               
-              <a href={`portfolio/${e.name}`} className="TL-container">
-                <div className="TL-Img 1">
+              <a href={`article/${e.id}`} className="TL-container">
+                <div className="TL-Img">
                   <img src={e.image} alt="resource loading 1" width="80%" />
                 </div>
                 <div className="TL-Text">

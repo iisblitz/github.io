@@ -7,7 +7,7 @@ const About = () => {
         <div className="profile">
             <img src={pic} alt="ProfilePic" />
             <div className='data'>
-                <h1>Name: David Gonzalez</h1>
+                <h1>David Gonzalez</h1>
                 <p className='icons'><a href="https://www.linkedin.com/in/david-gonzalez-alanis/"><i className="fa-brands fa-linkedin"></i> Linkedin</a> 
                 <a href="https://github.com/iisblitz"><i className="fa-brands fa-github"> </i> GitHub</a></p>
                 <p>Email: iis_dbga@live.com Phone: +52 55-1451-5527 Location: Mexico City / Coyoacan</p>

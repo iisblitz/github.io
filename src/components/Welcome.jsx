@@ -7,9 +7,9 @@ class Welcome extends React.Component {
     render(){
         return( <div>
             <h1>Welcome</h1>
-                <button onClick={event=> this.props.handleClick(1)}>About</button>
-                <button onClick={event=> this.props.handleClick(2)}>Time Line</button>
-                <button onClick={event=> this.props.handleClick(3)}>News</button>
+                <button className="Wbutton" onClick={event=> this.props.handleClick(1)}>About</button>
+                <button className="Wbutton" onClick={event=> this.props.handleClick(2)}>Time Line</button>
+                <button className="Wbutton" onClick={event=> this.props.handleClick(3)}>News</button>
         </div>)
     }
 }
