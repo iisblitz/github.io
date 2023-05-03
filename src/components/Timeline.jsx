@@ -9,9 +9,8 @@ class Timeline extends React.Component {
 
     this.state = {
       Work: true,
-      Hobbies: false,
-      Projects: false,
-      Education: false,
+      Hobbies: true,
+      Education: true,
       language: "ENG"
     };
     this.handleToggle = this.handleToggle.bind(this);
@@ -41,10 +40,7 @@ class Timeline extends React.Component {
             <i className="fa-solid fa-school" />
             Education
           </button>
-          <button onClick={this.handleToggle} value="showProy">
-            <i className="fa-solid fa-mug-saucer" />
-            Projects
-          </button>
+          
           <button onClick={this.handleToggle} value="showHobs">
             <i className="fa-solid fa-person-walking-luggage" />
             Hobbies
@@ -53,6 +49,7 @@ class Timeline extends React.Component {
         
         <VerticalTimeline>
         {this.props.loadData && this.props.loadData.filter(e=> e.language === this.state.language).sort((a, b) => new Date(b.end) - new Date(a.end)).map(e => (
+            
             
             <VerticalTimelineElement 
               key={e.id}
@@ -67,10 +64,10 @@ class Timeline extends React.Component {
                 display: 'flex',
                 itemAlign: 'center',
               }}
-              icon={<i className="fa-solid fa-industry"></i>}
+              icon={<i className={e.icon}></i>}
             >
-              
-              <a href={`article/${e.id}`} className="TL-container">
+              {console.log(this.state[e.category])}
+              <a href={`article/${e.name}`} className="TL-container">
                 <div className="TL-Img">
                   <img src={e.image} alt="resource loading 1" width="80%" />
                 </div>
@@ -83,7 +80,9 @@ class Timeline extends React.Component {
                 </div>
               </a>
             </VerticalTimelineElement>
+            
 
+            
       ))}
       </VerticalTimeline>
       </div>

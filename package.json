@@ -2,7 +2,7 @@
   "homepage": "https://iisblitz.github.io/portfolio",
   "name": "portfolio",
   "version": "0.1.1",
-  "proxy": "http://localhost:3000",
+  "proxy": "davidgonzalez-1e347.firebaseapp.com",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",

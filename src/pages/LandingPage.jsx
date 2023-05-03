@@ -3,6 +3,7 @@ import Welcome from '../components/Welcome';
 import About from '../components/About';
 import News from '../components/News'
 import Timeline from '../components/Timeline'
+import Footer from '../components/Footer'
 class LandingPage extends React.Component{
     constructor(props){
         super(props);
@@ -18,6 +19,7 @@ handleClick(num){this.setState({index: num})}
     <div>
         <Welcome className="Welcome" handleClick={this.handleClick}/>
         {this.state.index === 1? <About/>:this.state.index === 2? <Timeline/>:<News/>}
+<Footer/>
     </div>
 )}
 }
