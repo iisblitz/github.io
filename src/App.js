@@ -8,6 +8,7 @@ function App() {
       <Routes>
         <Route path='/' element={<LandingPage/>}></Route>
         <Route path='/Detail/:name'></Route>
+        <Route path='/Detail/:name/:articles'></Route>
       </Routes>
     </Router>
   );

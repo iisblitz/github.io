@@ -9,8 +9,8 @@ class Timeline extends React.Component {
 
     this.state = {
       Work: true,
-      Hobbies: true,
-      Education: true,
+      Hobbies: false,
+      Education: false,
       language: "ENG"
     };
     this.handleToggle = this.handleToggle.bind(this);
@@ -32,25 +32,22 @@ class Timeline extends React.Component {
     return (
       <div className="Timeline-Window">
         <div className="TL-Menu">
-          <button onClick={this.handleToggle} value="showExp">
+          <button key="1" onClick={this.handleToggle} value="Work">
             <i className="fa-solid fa-industry" />
             Work Experience
           </button>
-          <button onClick={this.handleToggle} value="showEdu">
+          <button key="2" onClick={this.handleToggle} value="Education">
             <i className="fa-solid fa-school" />
             Education
-          </button>
-          
-          <button onClick={this.handleToggle} value="showHobs">
+          </button>      
+          <button key="3" onClick={this.handleToggle} value="Hobbies">
             <i className="fa-solid fa-person-walking-luggage" />
             Hobbies
           </button>
         </div>
-        
+      {console.log(this.props)}
         <VerticalTimeline>
-        {this.props.loadData && this.props.loadData.filter(e=> e.language === this.state.language).sort((a, b) => new Date(b.end) - new Date(a.end)).map(e => (
-            
-            
+        {this.props.loadData && this.props.loadData.filter(e=> this.state[e.category]===true).filter(e=> e.language === this.state.language).sort((a, b) => new Date(b.end) - new Date(a.end)).map(e => (
             <VerticalTimelineElement 
               key={e.id}
               className="vertical-timeline-element--work"
@@ -64,34 +61,29 @@ class Timeline extends React.Component {
                 display: 'flex',
                 itemAlign: 'center',
               }}
-              icon={<i className={e.icon}></i>}
-            >
-              {console.log(this.state[e.category])}
+              icon={<i className={e.icon}></i>}>              
               <a href={`article/${e.name}`} className="TL-container">
                 <div className="TL-Img">
-                  <img src={e.image} alt="resource loading 1" width="80%" />
+                  <img src={e.image} alt="resource loading 1" width="90%" />
                 </div>
                 <div className="TL-Text">
-                
                   <h3 className="vertical-timeline-element-title">{e.name}</h3>
                   <h3 className="vertical-timeline-element-subtitle">{e.businessName}</h3>
-                  <h4 className="vertical-timeline-element-subtitle">{e.location}</h4>
+                  <p className="vertical-timeline-element-subtitle">{e.location}</p>
                   <p>{e.description}</p>
                 </div>
               </a>
             </VerticalTimelineElement>
-            
-
-            
       ))}
       </VerticalTimeline>
-      </div>
+              
+    </div>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
-  loadData: state.rootReducer.data,
+  loadData: state.rootReducer.time,
+  loadArts: state.rootReducer.arts
 });
-
 export default connect(mapStateToProps)(Timeline);
