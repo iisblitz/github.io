@@ -174,11 +174,158 @@ h2 .vertical-timeline-element-title {
 }
 
 .Footer {
-  position: absolute;
+  position: sticky;
   display: flex;
   flex-direction: column;
   bottom: 0%;
   justify-content: center;
   text-align: center;
   left: 33%;
+}
+
+.proCards {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 15%;
+  background-color: rgb(50, 50, 50);
+  height: 10rem;
+  border: 1px solid white;
+}
+
+.proCards .img img {
+  width: 10rem;
+  height: 10rem;
+  margin: 0 1rem;
+}
+
+.texts {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  margin-left: 3rem;
+}
+.texts p {
+  margin: 0;
+}
+
+.workTemplate {
+  display: flex;
+  flex-direction: column;
+  border: 1px white solid;
+  text-align: center;
+  margin: 0;
+  height: 95vh;
+  width: 95vw;
+}
+
+.workHeaders {
+  display: flex;
+  flex-direction: row;
+  border: 1px white solid;
+  height: 30%;
+}
+.workHeaders img {
+  margin: 5%;
+}
+.workDataTL {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 1rem;
+  margin-left: auto;
+  width: 20%;
+}
+.workDataTL p {
+  margin: 0;
+}
+.workDataTL h4 {
+  margin: 0;
+}
+.businessData {
+  margin: auto 5%;
+}
+
+.jobData {
+  display: flex;
+  flex-direction: column;
+  border: 1px white solid;
+  height: 30%;
+}
+
+.workProjects {
+  display: flex;
+  flex-direction: column;
+  border: 1px white solid;
+  height: 30%;
+}
+.projectBullet {
+  width: 15rem;
+  border: 1px white solid;
+  background-color: rgb(30, 30, 30);
+  display: flex;
+  flex-direction: column;
+  margin: 2%;
+  justify-content: space-evenly;
+}
+
+.A3F {
+  align-items: center;
+  text-align: center;
+  height: 95vh;
+  width: 95vw;
+  border: 1px solid white;
+  background-color: rgb(10, 10, 10);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.A3F h1 {
+  width: 100%;
+}
+.backGround {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  border: 1px solid white;
+  justify-content: space-evenly;
+}
+.probDesc {
+  border: 1px solid white;
+  padding: auto;
+  height: auto;
+}
+.desiredState {
+  border: 1px solid white;
+  height: auto;
+  padding: auto;
+}
+.goal {
+  border: 1px solid white;
+  height: auto;
+  padding: auto;
+}
+.Solution {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  border: 1px solid white;
+  justify-content: space-evenly;
+}
+.Results {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  border: 1px solid white;
+  justify-content: space-evenly;
+}
+.Results img {
+  width: 100%;
+}
+.A3Ftitle {
+  height: 5rem;
+  border: 1px solid white;
+  margin-bottom: auto;
 }

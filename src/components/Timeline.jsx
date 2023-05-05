@@ -45,7 +45,6 @@ class Timeline extends React.Component {
             Hobbies
           </button>
         </div>
-      {console.log(this.props)}
         <VerticalTimeline>
         {this.props.loadData && this.props.loadData.filter(e=> this.state[e.category]===true).filter(e=> e.language === this.state.language).sort((a, b) => new Date(b.end) - new Date(a.end)).map(e => (
             <VerticalTimelineElement 
@@ -62,7 +61,7 @@ class Timeline extends React.Component {
                 itemAlign: 'center',
               }}
               icon={<i className={e.icon}></i>}>              
-              <a href={`article/${e.name}`} className="TL-container">
+              <a href={`./${e.businessName}`} className="TL-container">
                 <div className="TL-Img">
                   <img src={e.image} alt="resource loading 1" width="90%" />
                 </div>
@@ -83,7 +82,6 @@ class Timeline extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  loadData: state.rootReducer.time,
-  loadArts: state.rootReducer.arts
+  loadData: state.rootReducer.time
 });
 export default connect(mapStateToProps)(Timeline);
