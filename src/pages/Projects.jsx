@@ -18,7 +18,7 @@ class Projects extends React.Component {
         if(this.state.loading){
             return <div>...Loading</div>
           }
-        const {url, details} = this.state;
+        const {details} = this.state;
             if (!details) {
             return <div>Details not found</div>;
           }
@@ -43,7 +43,7 @@ class Projects extends React.Component {
                 <div className="Results">
                     <div className="A3Ftitle"><h2>Deliverable</h2></div>
                     <div className="status"><p> Status:{details.Status}</p><div/>
-                    <div className="Deliverable"><img src={details.Image} alt="Image" /></div>
+                    <div className="Deliverable"><img src={details.Image} alt="DeliverablePic" /></div>
                     <div className="link"> <h3><a href={details.Deliverable}> Google Drive Acces to file</a> </h3></div>
                 </div>    
                 </div>

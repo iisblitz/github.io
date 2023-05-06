@@ -148,7 +148,7 @@ i {
 .TL-Img {
   flex-wrap: wrap;
   justify-content: center;
-  width: 100%;
+  width: fit-content;
 }
 
 .TL-Menu {
@@ -190,9 +190,10 @@ h2 .vertical-timeline-element-title {
   background-color: rgb(50, 50, 50);
   height: 10rem;
   border: 1px solid white;
+  border-radius: 15px;
 }
 
-.proCards .img img {
+.proCards img {
   width: 10rem;
   height: 10rem;
   margin: 0 1rem;
@@ -328,4 +329,23 @@ h2 .vertical-timeline-element-title {
   height: 5rem;
   border: 1px solid white;
   margin-bottom: auto;
+}
+
+.BOK {
+  border: 1px solid white;
+  width: 30%;
+  margin-left: auto;
+  text-align: center;
+  justify-content: center;
+  border-radius: 0 15px 15px 0;
+}
+
+.BOK .Green {
+  background-color: rgba(0, 250, 0, 0.5);
+}
+.BOK .Blue {
+  background-color: rgba(0, 0, 250, 0.5);
+}
+.BOK .Black {
+  background-color: rgba(0, 0, 0, 0.5);
 }

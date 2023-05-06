@@ -2,7 +2,7 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 import 'react-vertical-timeline-component/style.min.css';
 import React from 'react';
 import { connect } from 'react-redux';
-
+import {Link} from 'react-router-dom'
 class Timeline extends React.Component {
   constructor(props) {
     super(props);
@@ -61,17 +61,19 @@ class Timeline extends React.Component {
                 itemAlign: 'center',
               }}
               icon={<i className={e.icon}></i>}>              
-              <a href={`./${e.businessName}`} className="TL-container">
-                <div className="TL-Img">
-                  <img src={e.image} alt="resource loading 1" width="90%" />
-                </div>
-                <div className="TL-Text">
+                <Link to={e.businessName}>
+                  <div ckassName="TL-container">
+                  <div className="TL-img">
+                  <img src={e.image} alt="resource loading 1" />
+                  </div>
+                  <div className="TL-Text">
                   <h3 className="vertical-timeline-element-title">{e.name}</h3>
                   <h3 className="vertical-timeline-element-subtitle">{e.businessName}</h3>
                   <p className="vertical-timeline-element-subtitle">{e.location}</p>
                   <p>{e.description}</p>
-                </div>
-              </a>
+                  </div>
+                  </div>
+                </Link>
             </VerticalTimelineElement>
       ))}
       </VerticalTimeline>

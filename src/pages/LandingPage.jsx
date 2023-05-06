@@ -19,7 +19,7 @@ handleClick(num){this.setState({index: num})}
     <div>
         <Welcome className="Welcome" handleClick={this.handleClick}/>
         {this.state.index === 1? <About/>:this.state.index === 2? <Timeline/>:<News/>}
-<Footer/>
+        <Footer/>
     </div>
 )}
 }

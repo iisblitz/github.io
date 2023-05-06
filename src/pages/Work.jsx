@@ -10,7 +10,6 @@ class Work extends React.Component {
             url:"",
             details:{},
             projects:[]
-
         }
     }
 
@@ -32,6 +31,7 @@ class Work extends React.Component {
         }
         return(
           <div className="workTemplate">
+            {console.log(this.props.loadData)}
             <h2>{details.businessName}</h2>
             <div className="workHeaders">
               <div>
