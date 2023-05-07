@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+import { Routes, Route, HashRouter as Router } from "react-router-dom";
 import LandingPage from './pages/LandingPage'
 import Work from "./pages/Work";
 import Projects from "./pages/Projects";
