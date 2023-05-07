@@ -61,8 +61,7 @@ class Timeline extends React.Component {
                 itemAlign: 'center',
               }}
               icon={<i className={e.icon}></i>}>              
-                <Link to={e.businessName}>
-                  <div ckassName="TL-container">
+                <Link className="TL-container" to={e.businessName}>
                   <div className="TL-img">
                   <img src={e.image} alt="resource loading 1" />
                   </div>
@@ -71,7 +70,6 @@ class Timeline extends React.Component {
                   <h3 className="vertical-timeline-element-subtitle">{e.businessName}</h3>
                   <p className="vertical-timeline-element-subtitle">{e.location}</p>
                   <p>{e.description}</p>
-                  </div>
                   </div>
                 </Link>
             </VerticalTimelineElement>

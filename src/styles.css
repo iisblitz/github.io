@@ -138,17 +138,16 @@ i {
 .TL-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   border-color: white;
 }
 .TL-text {
   width: 75%;
 }
-.TL-Img {
-  flex-wrap: wrap;
-  justify-content: center;
+.TL-img {
   width: fit-content;
+  margin-right: 10px;
 }
 
 .TL-Menu {
@@ -214,7 +213,7 @@ h2 .vertical-timeline-element-title {
   flex-direction: column;
   border: 1px white solid;
   text-align: center;
-  margin: 0;
+  margin: auto;
   height: 95vh;
   width: 95vw;
 }
@@ -225,16 +224,19 @@ h2 .vertical-timeline-element-title {
   border: 1px white solid;
   height: 30%;
 }
+.workHeaderImg {
+  width: 25%;
+}
 .workHeaders img {
   margin: 5%;
 }
 .workDataTL {
   display: flex;
   flex-direction: column;
-  text-align: left;
+  text-align: center;
   margin: 1rem;
   margin-left: auto;
-  width: 20%;
+  width: 25%;
 }
 .workDataTL p {
   margin: 0;
@@ -244,6 +246,10 @@ h2 .vertical-timeline-element-title {
 }
 .businessData {
   margin: auto 5%;
+  justify-content: space-around;
+}
+.businessData h2 {
+  text-align: left;
 }
 
 .jobData {
@@ -257,7 +263,14 @@ h2 .vertical-timeline-element-title {
   display: flex;
   flex-direction: column;
   border: 1px white solid;
-  height: 30%;
+  height: fit-content;
+  flex-wrap: wrap;
+}
+.WorkWrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 .projectBullet {
   width: 15rem;
@@ -265,8 +278,11 @@ h2 .vertical-timeline-element-title {
   background-color: rgb(30, 30, 30);
   display: flex;
   flex-direction: column;
-  margin: 2%;
   justify-content: space-evenly;
+  margin: 1%;
+}
+.projectBullet img {
+  margin: 0;
 }
 
 .A3F {
@@ -348,4 +364,11 @@ h2 .vertical-timeline-element-title {
 }
 .BOK .Black {
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.Maintenance form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10%;
+  justify-content: center;
 }

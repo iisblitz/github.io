@@ -1,6 +1,6 @@
 import React from "react";
 import { connect} from "react-redux";
-
+import {Link} from "react-router-dom"
 
 class Work extends React.Component {
     constructor(props){
@@ -31,13 +31,14 @@ class Work extends React.Component {
         }
         return(
           <div className="workTemplate">
-            {console.log(this.props.loadData)}
-            <h2>{details.businessName}</h2>
+            {console.log(details, projects)}
+            <h1>{details.businessName}</h1>
             <div className="workHeaders">
-              <div>
+              <div className="workHeaderImg">
                 <img src={details.image} alt="logo" />
               </div>
               <div className="businessData">
+                <h2>Description:</h2>
                 <p>{details.businessDescription}</p>
               </div>
               <div className="workDataTL">
@@ -50,17 +51,21 @@ class Work extends React.Component {
               <p>{details.description}</p>
             </div>
             <div className="workProjects">
+              <div className="workProjectTitle">
               <h1>Projects</h1>
+              </div>
+              <div className="WorkWrap">
               {projects.map(e =>(
                 <div key={e.id} className="projectBullet">
-                  <a href={`./${url}/${e.Title}`}>
+                  <Link to={`./${e.Title}`}>
                     <img src={e.Logo} alt="Logo" />
                     <p>{e.Title}</p>
                     <p>{e.shortDescription}</p>
-                    <p>Status: {e.status}</p>
-                  </a>
+                    <p>Status: {e.Status}</p>
+                    </Link>
                 </div>
               ))}
+</div>
             </div>
           </div>
         )
