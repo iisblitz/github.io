@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import {connect} from 'react-redux'
+import { Link } from "react-router-dom";
 
 class Maintenance extends React.Component{
     constructor(props){
@@ -13,6 +14,7 @@ class Maintenance extends React.Component{
             timeline:{
             Language:"",
             Image:"",
+            Icons:"",
             Category:"",
             Name:"",
             Location:"",
@@ -39,6 +41,9 @@ class Maintenance extends React.Component{
             TimeConstraints:"",
             Plan:[],
             Tools:[],
+            Status:"",
+            Image:"",
+            Deliverable:""
             }
         }
         this.handleAlt = this.handleAlt.bind(this);
@@ -96,12 +101,12 @@ class Maintenance extends React.Component{
     handleChangeTimeline(a,b){
         const name = a
         const value= b;
-        this.setState({timeline:{[name]:value}})
+        this.setState(prevState => ({timeline:{...prevState.timeline,[name]:value}}))
     }
     handleChangeArticle(a,b){
         const name = a
         const value= b;
-        this.setState({article:{[name]:value}})
+        this.setState(prevState => ({article:{...prevState.article,[name]:value}}))
     }
         
     render(){
@@ -115,6 +120,7 @@ class Maintenance extends React.Component{
             <form>
             <label>Language:</label><input name="Language" value={this.state.timeline.Language} type="text" onChange={(e)=> this.handleChangeTimeline(e.target.name, e.target.value)} />
             <label>Image:</label><input name="Image" value={this.state.timeline.Image} type="text" onChange={(e)=> this.handleChangeTimeline(e.target.name, e.target.value)} />
+            <label>Icon:</label><input name="Icon" value={this.state.timeline.Icon} type="text" onChange={(e)=> this.handleChangeTimeline(e.target.name, e.target.value)} />
             <label>Category:</label><input name="Category" value={this.state.timeline.Category} type="text" onChange={(e)=> this.handleChangeTimeline(e.target.name, e.target.value)} />
             <label>Name:</label><input name="Name" value={this.state.timeline.Name} type="text" onChange={(e)=> this.handleChangeTimeline(e.target.name, e.target.value)} />
             <label>Location:</label><input name="Location" value={this.state.timeline.Location} type="text" onChange={(e)=> this.handleChangeTimeline(e.target.name, e.target.value)} />
@@ -126,14 +132,16 @@ class Maintenance extends React.Component{
             <label>WorkTime:</label><input name="WorkTime" value={this.state.timeline.WorkTime} type="text" onChange={(e)=> this.handleChangeTimeline(e.target.name, e.target.value)} />
             <label>Begin:</label><input name="Begin" value={this.state.timeline.Begin} type="date" onChange={(e)=> this.handleChangeTimeline(e.target.name, e.target.value)} />
             <label>End:</label><input name="End" value={this.state.timeline.End} type="date" onChange={(e)=> this.handleChangeTimeline(e.target.name, e.target.value)} />
+            
             <button type="submit" onClick={this.handleAddTimeLine}>Add Timeline Event</button>
             </form>
             {this.props.loadData.time.map(e=> (
                 <div key={e.id}>
-                <p>{e.id} - job {e.name}  </p> <button onClick={() => this.handleDeleteTimeline(e.id)}> X </button>
+                <p>{e.id} - job - {e.Name}  </p> <button onClick={() => this.handleDeleteTimeline(e.id)}> X </button>
                 </div>
             ))}
             <button onClick={this.handleAlt}> Change to Articles</button>            
+            <Link to='../'>Return</Link>
         </div>
         
         :
@@ -155,14 +163,18 @@ class Maintenance extends React.Component{
             <label>TimeConstraints:</label><input name="TimeConstraints" value={this.state.article.TimeConstraints} type="text" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
             <label>Plan:</label><input name="Plan" value={this.state.article.Plan} type="text" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
             <label>Tools:</label><input name="Tools" value={this.state.article.Tools} type="text" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
+            <label>Status:</label><input name="Status" value={this.state.article.Status} type="text" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
+            <label>Image:</label><input name="Image" value={this.state.article.Image} type="url" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
+            <label>Deliverable:</label><input name="Deliverable" value={this.state.article.Deliverable} type="url" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
             <button type="submit" onClick={this.handleAddArticle}>Add Timeline Event</button>
             </form>
             {this.props.loadData.arts.map(e=> (
                 <div key={e.id}>
-                <p>{e.id} - Project {e.Title}  </p> <button onClick={() => this.handleDeleteArticles(e.id)}> X </button>
+                <p>{e.id} - Project - {e.Title}  </p> <button onClick={() => this.handleDeleteArticles(e.id)}> X </button>
                 </div>
             ))}
             <button onClick={this.handleAlt}> Change to Timeline</button>
+            <Link to='../'>Return</Link>
         </div>
         )
     }

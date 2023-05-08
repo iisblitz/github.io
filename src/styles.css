@@ -3,372 +3,268 @@ body {
   color: linen;
 }
 
-.welcome {
-  background-color: rgb(50, 50, 50);
-  border-color: yellow;
-  height: 15vh;
-  width: 90vw;
-  margin: 3rem auto;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-}
-.Wbuttons {
-  height: wrap-content;
-  width: 25%;
-  margin: 0 auto;
-}
-.welcome h1 {
-  margin: auto;
-  padding: 0;
-}
-.welcome button {
-  background-color: black;
-  color: white;
-  margin: 0 5%;
-  border-radius: 15%;
-  border: 1px solid yellow;
-}
-.welcome button:hover {
-  color: yellow;
-}
-
+/*About*/
 .about {
   width: 100%;
 }
 .profile {
   display: flex;
   flex-direction: row;
-  width: 90vw;
-  margin: 1% auto;
-  justify-content: space-around;
-  font-size: 1rem;
+  margin: 10% 0;
+  justify-content: space-evenly;
 }
-
-.profile img {
-  width: 20%;
-  height: 20%;
-  margin: auto;
+.profpic img {
   border-radius: 50%;
+  margin: 2rem;
 }
 .data {
-  width: 65%;
-  height: auto;
-  margin-left: 10%;
-  text-align: justify;
-}
-
-.data h1 {
   text-align: center;
-}
-
-i {
-  color: aliceblue;
-}
-
-a {
-  text-decoration: none;
-  color: aliceblue;
-}
-
-.data {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-.icons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.timeline {
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(30, 30, 30);
-  width: 90vw;
-  height: 40rem;
   margin: auto;
-  flex-direction: row;
-  border-color: white;
-  border-radius: 1rem;
-  flex-wrap: wrap;
-}
-
-.timeline .buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-}
-.timeline button {
-  border-color: yellow;
-  border-radius: 1rem;
-  padding: 0.2rem;
-  margin: 0.4rem;
-  background-color: black;
-  color: white;
-}
-
-.timeline button:hover {
-  border-color: yellow;
-  color: yellow;
-}
-
-.timeline .canva {
-  border-color: aliceblue;
-  border-radius: 1rem;
-  width: 98%;
-  height: 80%;
-  background-color: rgb(50, 50, 50);
-  margin: auto;
-}
-.Timeline-Window {
-  height: 80vh;
-  overflow-y: scroll;
-}
-
-i {
-  margin: auto;
-}
-.TL-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  border-color: white;
-}
-.TL-text {
-  width: 75%;
-}
-.TL-img {
-  width: fit-content;
-  margin-right: 10px;
-}
-
-.TL-Menu {
-  display: flex;
-  justify-content: space-around;
-  margin: 2rem 0;
-}
-
-.TL-Menu button {
-  display: flex;
-  flex-direction: column;
-  background-color: black;
-  border-color: white;
-  color: white;
-  border-radius: 10%;
-  border-spacing: 1rem;
-}
-.TL-Menu button:hover {
-  border-color: yellow;
-}
-h2 .vertical-timeline-element-title {
-  color: white;
+  margin-bottom: 10%;
 }
 
 .Footer {
-  position: sticky;
-  display: flex;
-  flex-direction: column;
-  bottom: 0%;
-  justify-content: center;
-  text-align: center;
-  left: 33%;
-}
-
-.proCards {
-  display: flex;
-  flex-direction: row;
-  margin: 1rem 15%;
-  background-color: rgb(50, 50, 50);
-  height: 10rem;
-  border: 1px solid white;
-  border-radius: 15px;
-}
-
-.proCards img {
-  width: 10rem;
-  height: 10rem;
-  margin: 0 1rem;
-}
-
-.texts {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  margin-left: 3rem;
-}
-.texts p {
-  margin: 0;
-}
-
-.workTemplate {
-  display: flex;
-  flex-direction: column;
-  border: 1px white solid;
-  text-align: center;
-  margin: auto;
-  height: 95vh;
-  width: 95vw;
-}
-
-.workHeaders {
-  display: flex;
-  flex-direction: row;
-  border: 1px white solid;
-  height: 30%;
-}
-.workHeaderImg {
-  width: 25%;
-}
-.workHeaders img {
-  margin: 5%;
-}
-.workDataTL {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin: 1rem;
-  margin-left: auto;
-  width: 25%;
-}
-.workDataTL p {
-  margin: 0;
-}
-.workDataTL h4 {
-  margin: 0;
-}
-.businessData {
-  margin: auto 5%;
-  justify-content: space-around;
-}
-.businessData h2 {
-  text-align: left;
-}
-
-.jobData {
-  display: flex;
-  flex-direction: column;
-  border: 1px white solid;
-  height: 30%;
-}
-
-.workProjects {
-  display: flex;
-  flex-direction: column;
-  border: 1px white solid;
-  height: fit-content;
-  flex-wrap: wrap;
-}
-.WorkWrap {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-.projectBullet {
-  width: 15rem;
-  border: 1px white solid;
-  background-color: rgb(30, 30, 30);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  margin: 1%;
-}
-.projectBullet img {
-  margin: 0;
-}
-
-.A3F {
-  align-items: center;
-  text-align: center;
-  height: 95vh;
-  width: 95vw;
-  border: 1px solid white;
-  background-color: rgb(10, 10, 10);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.A3F h1 {
+  position: fixed;
+  bottom: 0;
   width: 100%;
-}
-.backGround {
-  width: 33%;
-  display: flex;
-  flex-direction: column;
-  height: 85vh;
-  border: 1px solid white;
-  justify-content: space-evenly;
-}
-.probDesc {
-  border: 1px solid white;
-  padding: auto;
-  height: auto;
-}
-.desiredState {
-  border: 1px solid white;
-  height: auto;
-  padding: auto;
-}
-.goal {
-  border: 1px solid white;
-  height: auto;
-  padding: auto;
-}
-.Solution {
-  width: 33%;
-  display: flex;
-  flex-direction: column;
-  height: 85vh;
-  border: 1px solid white;
-  justify-content: space-evenly;
-}
-.Results {
-  width: 33%;
-  display: flex;
-  flex-direction: column;
-  height: 85vh;
-  border: 1px solid white;
-  justify-content: space-evenly;
-}
-.Results img {
-  width: 100%;
-}
-.A3Ftitle {
-  height: 5rem;
-  border: 1px solid white;
-  margin-bottom: auto;
-}
-
-.BOK {
-  border: 1px solid white;
-  width: 30%;
-  margin-left: auto;
   text-align: center;
-  justify-content: center;
-  border-radius: 0 15px 15px 0;
+  overflow: hidden;
+  background-color: black;
+  font-size: 1rem;
+  border-top: 1px solid white;
+}
+p.Footer {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: white;
+  margin: 2%;
 }
 
-.BOK .Green {
-  background-color: rgba(0, 250, 0, 0.5);
-}
-.BOK .Blue {
-  background-color: rgba(0, 0, 250, 0.5);
-}
-.BOK .Black {
-  background-color: rgba(0, 0, 0, 0.5);
-}
+/* header */
 
-.Maintenance form {
+.header {
   display: flex;
   flex-direction: column;
   margin: 0 10%;
   justify-content: center;
+}
+
+.headerImg {
+  width: 100%;
+}
+.headerImg img {
+  width: 100%;
+}
+
+.Menu {
+  display: flex;
+  flex-direction: row;
+}
+.Wbutton {
+  margin: auto;
+  padding: 1%;
+  font-size: medium;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+.Wbutton:hover {
+  border: 1px solid yellow;
+  color: yellow;
+}
+
+/*Timeline*/
+.TL-Menu {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem auto;
+  justify-content: space-evenly;
+}
+.TL-MenuB {
+  color: white;
+  background-color: black;
+  padding: 1%;
+  font-size: small;
+  border-radius: 5px;
+  border: 1px solid white;
+  margin: 3px;
+}
+.TL-MenuB:hover {
+  color: yellow;
+  border: 1px solid yellow;
+}
+.TL-Menu p {
+  margin: 1px 0;
+}
+
+.vertical-timeline-element--work i {
+  margin: auto;
+}
+
+.TL-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/*Work*/
+.workTemplate {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+.workHeaders {
+  display: flex;
+  flex-direction: row;
+  margin: 1%;
+  justify-content: space-evenly;
+}
+.businessData {
+  margin: 3%;
+  text-align: justify;
+}
+.workDataTL {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  margin: 0%;
+}
+.jobData {
+  margin: 10%;
+}
+.jobData p {
+  text-align: justify;
+}
+.WorkWrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: auto;
+}
+.projectBullet {
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  height: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+.projectBullet img {
+  width: 10rem;
+}
+.projectBullet a {
+  border: 1px solid white;
+}
+/*Programs*/
+.proDisplay {
+  margin: 10%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+.proCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.Blue {
+  background-color: rgba(0, 0, 200, 0.3);
+}
+.Green {
+  background-color: rgba(0, 200, 0, 0.3);
+}
+.Black {
+  background-color: rgba(100, 100, 100, 0.3);
+}
+.Card {
+  border-radius: 15px;
+  margin: 5rem;
+  transform: translateX(200%);
+  transition: transform 400ms ease;
+}
+.Card:nth-of-type(even) {
+  transform: translateX(-200%);
+}
+.Card.show {
+  transform: translateX(0);
+}
+
+/*Projects*/
+.A3F {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.Cols {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid white;
+  justify-content: space-between;
+  margin: 3rem;
+  height: 80%;
+}
+.backGround {
+  width: 25%;
+}
+.backGround div {
+  margin: 30% 0;
+}
+.Solution {
+  width: 25%;
+}
+.Solution div {
+  margin: 30% 0;
+}
+.Results {
+  width: 25%;
+}
+.Results div {
+  margin: 30% 0;
+}
+
+.Deliverable img {
+  width: 100%;
+}
+@media only screen and (max-width: 600px) {
+  .profile {
+    flex-direction: column;
+  }
+  .profpic img {
+    margin: 0 25%;
+  }
+  .workHeaders {
+    flex-direction: column;
+  }
+  .workDataTL {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 95%;
+    align-items: center;
+  }
+  .WorkWrap {
+    flex-direction: column;
+    width: 85%;
+  }
+  .Cols {
+    flex-direction: column;
+    width: 100%;
+  }
+  .backGround {
+    width: 100%;
+  }
+  .Solution {
+    width: 100%;
+  }
+  .Results {
+    width: 100%;
+  }
 }

@@ -11,14 +11,14 @@ class Timeline extends React.Component {
       Work: true,
       Hobbies: false,
       Education: false,
-      language: "ENG"
+      Language: "ENG"
     };
     this.handleToggle = this.handleToggle.bind(this);
   }
 
-  handleToggle = (e) => {
+  handleToggle = (ev) => {
     this.setState((state) => {
-      let checker = e.target.value;
+      let checker = ev.target.value;
       if (state[checker] === true) {
         return { [checker]: false };
       } else {
@@ -30,29 +30,26 @@ class Timeline extends React.Component {
   render() {
     
     return (
-      <div className="Timeline-Window">
+<div className="Timeline-Window">
         <div className="TL-Menu">
-          <button key="1" onClick={this.handleToggle} value="Work">
-            <i className="fa-solid fa-industry" />
-            Work Experience
+          <button key="1" onClick={(event)=>this.handleToggle(event)} value="Work" className='TL-MenuB'>
+            <i className="fa-solid fa-industry" /><p>Work Experience</p>
           </button>
-          <button key="2" onClick={this.handleToggle} value="Education">
-            <i className="fa-solid fa-school" />
-            Education
+          <button key="2" onClick={(event)=>this.handleToggle(event)} value="Education" className='TL-MenuB'>
+            <i className="fa-solid fa-school" /><p>Education</p>
           </button>      
-          <button key="3" onClick={this.handleToggle} value="Hobbies">
-            <i className="fa-solid fa-person-walking-luggage" />
-            Hobbies
+          <button key="3" onClick={(event)=>this.handleToggle(event)} value="Hobbies" className='TL-MenuB'>
+            <i className="fa-solid fa-person-walking-luggage" /><p>Hobbies</p>
           </button>
         </div>
         <VerticalTimeline>
-        {this.props.loadData && this.props.loadData.filter(e=> this.state[e.category]===true).filter(e=> e.language === this.state.language).sort((a, b) => new Date(b.end) - new Date(a.end)).map(e => (
+        {this.props.loadData && this.props.loadData.filter(e=> this.state[e.Category]===true).filter(e=> e.Language === this.state.Language).sort((a, b) => new Date(b.End) - new Date(a.End)).map(e => (
             <VerticalTimelineElement 
               key={e.id}
               className="vertical-timeline-element--work"
               contentStyle={{ background: 'rgb(0,0,0)', color: '#fff' }}
               contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-              date={e.begin + ' / ' + e.end}
+              date={e.Begin + ' / ' + e.End}
               iconStyle={{
                 background: 'rgb(0,0,0)',
                 color: '#FFF',
@@ -60,16 +57,16 @@ class Timeline extends React.Component {
                 display: 'flex',
                 itemAlign: 'center',
               }}
-              icon={<i className={e.icon}></i>}>              
-                <Link className="TL-container" to={e.businessName}>
+              icon={<i className={e.Icon}></i>}>              
+                <Link className="TL-container" to={e.BusinessName}>
                   <div className="TL-img">
-                  <img src={e.image} alt="resource loading 1" />
+                  <img src={e.Image} alt="resource loading 1" />
                   </div>
                   <div className="TL-Text">
-                  <h3 className="vertical-timeline-element-title">{e.name}</h3>
-                  <h3 className="vertical-timeline-element-subtitle">{e.businessName}</h3>
-                  <p className="vertical-timeline-element-subtitle">{e.location}</p>
-                  <p>{e.description}</p>
+                  <h3 className="vertical-timeline-element-title">{e.Name}</h3>
+                  <h3 className="vertical-timeline-element-subtitle">{e.BusinessName}</h3>
+                  <p className="vertical-timeline-element-subtitle">{e.Location}</p>
+                  <p>{e.BusinessDescription}</p>
                   </div>
                 </Link>
             </VerticalTimelineElement>

@@ -15,7 +15,7 @@ class Work extends React.Component {
 
     componentDidMount(){
         let url = window.location.href.split("/")[3].replace("%20"," ");
-        let details = this.props.loadData.time.filter(e=> e.businessName === url)[0];
+        let details = this.props.loadData.time.filter(e=> e.BusinessName === url)[0];
         let projects = this.props.loadData.arts.filter(e => e.Work === url);
         this.setState({loading:false, url, details, projects});
       }
@@ -25,30 +25,30 @@ class Work extends React.Component {
         if(this.state.loading){
           return <div>...Loading</div>
         }
-        const {url, details, projects} = this.state;
+        const {details, projects} = this.state;
         if (!details) {
           return <div>Details not found</div>;
         }
         return(
           <div className="workTemplate">
-            {console.log(details, projects)}
-            <h1>{details.businessName}</h1>
+            <h1>{details.BusinessName}</h1>
             <div className="workHeaders">
               <div className="workHeaderImg">
-                <img src={details.image} alt="logo" />
+                <img src={details.Image} alt="logo" />
               </div>
               <div className="businessData">
                 <h2>Description:</h2>
-                <p>{details.businessDescription}</p>
+                <p>{details.BusinessDescription}</p>
               </div>
               <div className="workDataTL">
-                <h4> Start: {details.begin} </h4><h4> End: {details.end}</h4>
-                <p> location: {details.location}</p>
+                <h4> Start: {details.Begin} </h4>
+                <h4> End: {details.End}</h4>
+                <p> location: {details.Location}</p>
               </div>
             </div>
             <div className="jobData">
-              <h1>{details.category} description</h1>
-              <p>{details.description}</p>
+              <h1>{details.Category} description</h1>
+              <p>{details.JobDescription}</p>
             </div>
             <div className="workProjects">
               <div className="workProjectTitle">
@@ -60,13 +60,14 @@ class Work extends React.Component {
                   <Link to={`./${e.Title}`}>
                     <img src={e.Logo} alt="Logo" />
                     <p>{e.Title}</p>
-                    <p>{e.shortDescription}</p>
+                    <p>{e.ShortDescription}</p>
                     <p>Status: {e.Status}</p>
                     </Link>
                 </div>
               ))}
 </div>
             </div>
+            <Link to="../">Go Back</Link>
           </div>
         )
       }

@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from 'react-redux'
-
+import { Link } from "react-router-dom";
 class Projects extends React.Component {
     constructor(props){
         super(props);
@@ -26,17 +26,18 @@ class Projects extends React.Component {
           return(
             <div className="A3F">
                 <h1>{details.Title}</h1>
+                <div className="Cols">
                 <div className="backGround">
                     <div className="A3Ftitle"><h2>Problem Background</h2></div> 
-                    <div className="probDesc"><h3>Problem Description</h3><p>{details.problemDescription}</p></div>
-                    <div className="desiredState"><h3>Desired State</h3><p>{details.desiredState}</p></div>
+                    <div className="probDesc"><h3>Problem Description</h3><p>{details.ProblemDescription}</p></div>
+                    <div className="desiredState"><h3>Desired State</h3><p>{details.DesiredState}</p></div>
                     <div className="goal"><h3>Goals</h3><p>{details.Goals}</p></div>
                 </div>
                 <div className="Solution">
                     <div className="A3Ftitle"><h2>Solution</h2></div>
-                    <div className="Tools">{details.Tools}</div>
+                    <div className="Tools"><h3>Tools:</h3>{details.Tools}</div>
                     <div className="Plan">
-                        <p>Plan:</p>
+                        <h3>Plan</h3>
                         <ol>{details.Plan}</ol>
                     </div>
                 </div>
@@ -47,6 +48,9 @@ class Projects extends React.Component {
                     <div className="link"> <h3><a href={details.Deliverable}> Google Drive Acces to file</a> </h3></div>
                 </div>    
                 </div>
+                </div>
+                <Link to="../">Go Home</Link>
+              
             </div>
             
           )
