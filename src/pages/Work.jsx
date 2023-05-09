@@ -14,7 +14,8 @@ class Work extends React.Component {
     }
 
     componentDidMount(){
-        let url = window.location.href.split("/")[3].replace("%20"," ");
+        
+        let url = window.location.href.split("/")[4].replace("%20"," ");
         let details = this.props.loadData.time.filter(e=> e.BusinessName === url)[0];
         let projects = this.props.loadData.arts.filter(e => e.Work === url);
         this.setState({loading:false, url, details, projects});

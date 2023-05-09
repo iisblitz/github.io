@@ -10,7 +10,7 @@ class Projects extends React.Component {
         }
     }
     componentDidMount(){
-        let url = window.location.href.split("/")[4].replace("%20"," ");
+        let url = window.location.href.split("/")[5].replace("%20"," ");
         let details = this.props.loadData.filter(e=> e.Title === url)[0];
         this.setState({loading:false, url, details});
     }
