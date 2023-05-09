@@ -169,7 +169,7 @@ a {
 }
 /*Programs*/
 .proDisplay {
-  margin: 10%;
+  margin: 5%;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
@@ -189,8 +189,10 @@ a {
   background-color: rgba(100, 100, 100, 0.3);
 }
 .Card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
   border-radius: 15px;
-  margin: 5rem;
   transform: translateX(200%);
   transition: transform 400ms ease;
 }
@@ -200,7 +202,10 @@ a {
 .Card.show {
   transform: translateX(0);
 }
-
+.texts {
+  margin-inline: 1rem;
+  width: 45vw;
+}
 /*Projects*/
 .A3F {
   display: flex;
@@ -240,7 +245,7 @@ a {
 }
 @media only screen and (max-width: 600px) {
   .headerImg img {
-    width: 50vw;
+    width: 70vw;
   }
   .profile {
     flex-direction: column;
@@ -250,6 +255,9 @@ a {
     width: 50vw;
     margin: auto 0;
   }
+  .TL-img {
+    margin-bottom: 1rem;
+  }
   .workHeaders {
     flex-direction: column;
   }
@@ -257,6 +265,12 @@ a {
     flex-direction: row;
     justify-content: space-around;
     width: 95%;
+    align-items: center;
+  }
+
+  div.img {
+    display: flex;
+    flex-direction: row;
     align-items: center;
   }
   .WorkWrap {
@@ -275,5 +289,22 @@ a {
   }
   .Results {
     width: 100%;
+  }
+  .BOK {
+    display: none;
+  }
+  .proCards {
+    flex-direction: column;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .texts {
+    margin: 0;
+    width: 80vw;
+  }
+  .Card {
+    font-size: 1rem;
+    flex-direction: column;
   }
 }
