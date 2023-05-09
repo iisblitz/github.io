@@ -1,4 +1,4 @@
-import pic from '../recursos/Logos/DBGA_pic.jpg'
+import pic from '../recursos/DBGA_pic.jpg'
 
 
 const About = () => {
