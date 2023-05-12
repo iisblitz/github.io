@@ -1,6 +1,7 @@
 body {
   background-color: black;
   color: linen;
+  font-family: "Helvetica";
 }
 
 /*About*/
@@ -12,6 +13,7 @@ body {
   flex-direction: row;
   margin: 10% 0;
   justify-content: space-evenly;
+  width: 85vw;
 }
 .profpic img {
   border-radius: 50%;
@@ -59,7 +61,7 @@ a {
   justify-content: center;
 }
 .headerImg img {
-  width: 50rem;
+  width: 45vw;
 }
 
 .Menu {

@@ -12,7 +12,7 @@ const About = () => {
                 <h1>David Gonzalez</h1>
                 <p className='icons'><a href="https://www.linkedin.com/in/david-gonzalez-alanis/"><i className="fa-brands fa-linkedin"></i> Linkedin</a> 
                 <a href="https://github.com/iisblitz"><i className="fa-brands fa-github"> </i> GitHub</a>
-                <a href="https://wa.me/525514515527"><i className="fa fa-whatsapp"></i>What-App </a>
+                <a href="https://wa.me/525514515527"><i className="fa fa-whatsapp"></i>WhatsApp </a>
                 </p>
                 <p>Email: iis_dbga@live.com Phone: +52 55-1451-5527 Location: Mexico City / Coyoacan </p>
                 <p>Methodical work, continuous improvement, and professional teamwork to achieve the company's objectives.</p>

@@ -49,7 +49,7 @@ class Projects extends React.Component {
                 </div>    
                 </div>
                 </div>
-                <Link to="../">Go Home</Link>
+                <Link to="./">Timeline</Link>
               
             </div>
             

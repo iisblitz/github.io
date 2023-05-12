@@ -16,17 +16,12 @@ class Timeline extends React.Component {
     this.handleToggle = this.handleToggle.bind(this);
   }
 
-  handleToggle = (ev) => {
-    this.setState((state) => {
-      let checker = ev.target.value;
-      if (state[checker] === true) {
-        return { [checker]: false };
-      } else {
-        return { [checker]: true };
-      }
-    });
+  handleToggle = (event) => {
+    const propertyName = event.currentTarget.value;
+    this.setState((prevState) => ({
+      [propertyName]: !prevState[propertyName]
+    }));
   };
-
   render() {
     
     return (

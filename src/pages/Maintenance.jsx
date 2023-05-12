@@ -62,7 +62,7 @@ class Maintenance extends React.Component{
     handleAddArticle = async (e) =>{
         e.preventDefault();
         try{
-            await axios.post("http://localhost:3001/art", this.state.article, {
+            await axios.post("https://shy-erin-panther-tux.cyclic.app/art", this.state.article, {
                 headers: {
                   "Content-Type": "application/json",
                 },
@@ -73,7 +73,7 @@ class Maintenance extends React.Component{
     handleAddTimeLine = async (e) =>{
         e.preventDefault();
         try{
-            await axios.post("http://localhost:3001/", this.state.timeline, {
+            await axios.post("https://shy-erin-panther-tux.cyclic.app/", this.state.timeline, {
                 headers: {
                   "Content-Type": "application/json",
                 },
@@ -82,12 +82,12 @@ class Maintenance extends React.Component{
             console.error('Error adding document: ', err);
         }}
     handleDeleteTimeline = async (id) => {
-        try{await axios.delete(`http://localhost:3001/${id}`);
+        try{await axios.delete(`https://shy-erin-panther-tux.cyclic.app/${id}`);
         }catch(err){console.error('Error deleting document: ', err.response.data)}
     }
     handleDeleteArticles = async (id) => {
         try{
-            await axios.delete(`http://localhost:3001/art/${id}`);
+            await axios.delete(`https://shy-erin-panther-tux.cyclic.app/art/${id}`);
         }catch(err){
             console.error('Error deleting document: ', err.response.data);
         }
@@ -174,7 +174,7 @@ class Maintenance extends React.Component{
                 </div>
             ))}
             <button onClick={this.handleAlt}> Change to Timeline</button>
-            <Link to='../'>Return</Link>
+            <Link to='./'>Return</Link>
         </div>
         )
     }

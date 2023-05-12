@@ -68,7 +68,7 @@ class Work extends React.Component {
               ))}
 </div>
             </div>
-            <Link to="../">Go Back</Link>
+            <Link to="./">Go Back</Link>
           </div>
         )
       }
