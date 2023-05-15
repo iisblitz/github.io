@@ -21,7 +21,7 @@ class Footer extends React.Component{
             else{
                 return(
                     <div className='Footer'>
-                        <p>{this.props.loadData.language === "ESP"? "No soy dueño de ninugno de los logotipos de la sección de experiencia": "I do not own any of the logos from the timeline section"}</p>
+                        <p>{this.props.loadData.language === "ESP"? "No soy dueño de ninguno de los logotipos de la sección de experiencia": "I do not own any of the logos from the timeline section"}</p>
                     </div>
                 )}}
 }

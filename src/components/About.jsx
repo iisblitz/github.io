@@ -22,8 +22,8 @@ class About extends React.Component{
                 return <div>...Loading</div>
             }
             else{
+                console.log(this.props.loadData)
                 return(
-
                     <div>
                     <div className="profile">
                         <div className="profpic">

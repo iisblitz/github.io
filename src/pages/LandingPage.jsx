@@ -16,7 +16,7 @@ class LandingPage extends React.Component{
 handleClick(num){this.setState({index: num})} 
     render(){  
     return (
-    <div>
+    <div className="Landing">
         <Welcome className="Welcome" handleClick={this.handleClick}/>
         {this.state.index === 1? <About/>:this.state.index === 2? <Timeline/>:<Programs/>}
         <Footer/>

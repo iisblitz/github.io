@@ -35,7 +35,7 @@ class Work extends React.Component {
         return(
           <div className="workTemplate">
             <Welcome/>
-            {console.log()}
+            
             <h1>{details.BusinessName}</h1>
             <div className="workHeaders">
               <div className="workHeaderImg">
