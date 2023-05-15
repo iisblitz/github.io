@@ -49,7 +49,7 @@ a {
 
 .header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin: 0 10%;
   justify-content: center;
 }

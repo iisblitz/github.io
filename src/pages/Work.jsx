@@ -1,26 +1,28 @@
 import React from "react";
 import { connect} from "react-redux";
 import {Link} from "react-router-dom"
+import Welcome from "../components/Welcome";
 
 class Work extends React.Component {
     constructor(props){
         super(props);
         this.state= {
-            loading:true,
             url:"",
             details:{},
-            projects:[]
+            projects:[],
+            texts:[],
+            lang:"",
+            loading:true
         }
     }
 
-    componentDidMount(){
-        
+    componentDidMount(){        
         let url = window.location.href.split("/")[4].replace("%20"," ");
         let details = this.props.loadData.time.filter(e=> e.BusinessName === url)[0];
         let projects = this.props.loadData.arts.filter(e => e.Work === url);
-        this.setState({loading:false, url, details, projects});
+        const { language, texts } = this.props.loadData;
+        this.setState({loading:false, url, details, projects, language, texts});
       }
-
     
       render(){
         if(this.state.loading){
@@ -32,28 +34,30 @@ class Work extends React.Component {
         }
         return(
           <div className="workTemplate">
+            <Welcome/>
+            {console.log()}
             <h1>{details.BusinessName}</h1>
             <div className="workHeaders">
               <div className="workHeaderImg">
                 <img src={details.Image} alt="logo" />
               </div>
               <div className="businessData">
-                <h2>Description:</h2>
+                <h2>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].desc}</h2>
                 <p>{details.BusinessDescription}</p>
               </div>
               <div className="workDataTL">
-                <h4> Start: {details.Begin} </h4>
-                <h4> End: {details.End}</h4>
-                <p> location: {details.Location}</p>
+                <h4> {this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].ti}: {details.Begin} </h4>
+                <h4>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].te}: {details.End}</h4>
+                <p>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].loc}: {details.Location}</p>
               </div>
             </div>
             <div className="jobData">
-              <h1>{details.Category} description</h1>
+              <h1>{this.props.loadData.language === "ESP"? `Descripción de ${details.Category}`: `${details.Category} description`}</h1>
               <p>{details.JobDescription}</p>
             </div>
             <div className="workProjects">
               <div className="workProjectTitle">
-              <h1>Projects</h1>
+              <h1>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].header}</h1>
               </div>
               <div className="WorkWrap">
               {projects.map(e =>(
@@ -68,7 +72,9 @@ class Work extends React.Component {
               ))}
 </div>
             </div>
-            <Link to="./">Go Back</Link>
+            <Link to="./">
+              {this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].link}
+            </Link>
           </div>
         )
       }

@@ -21,3 +21,17 @@ export const loadData = () => {
       });
     };
   };
+
+  export const loadTexts = () =>{
+    return async function (dispatch){
+      const response = await axios.get('https://shy-erin-panther-tux.cyclic.app/texts');
+      dispatch({
+        type: 'LOAD_TEXTS',
+        payload: response.data
+      })
+    }
+  }
+  export const setLanguage = (language) => ({
+    type: 'SET_LANGUAGE',
+    payload: language
+  });

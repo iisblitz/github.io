@@ -53,7 +53,7 @@ class Programs extends React.Component {
                     ))}
                 </div>
                 <div>
-                    <Link to="portfolio/Maintenance">SO</Link>
+                    <Link to="Maintenance">SO</Link>
                 </div>
             </div>
         )

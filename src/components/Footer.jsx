@@ -1,12 +1,33 @@
-const Footer = () => {
-    return (
-        <div>
-            <p className="Footer">
-                None of the logos used in the timeline section belongs to me nor do I claim to own them. 
-            </p>
-            
-        </div>
-      );
+import {connect} from 'react-redux'
+import React from 'react';
+
+class Footer extends React.Component{
+    constructor(props) {
+        super(props)
+        this.state={
+        texts:[],
+        language:"",
+        loading:true
+        }
+    }   
+        componentDidMount(){
+            const { language, texts } = this.props.loadData;
+            this.setState({ language, texts, loading: false });
+        }
+        render(){
+            if(this.state.loading){
+                return <div>...Loading</div>
+            }
+            else{
+                return(
+                    <div className='Footer'>
+                        <p>{this.props.loadData.language === "ESP"? "No soy dueño de ninugno de los logotipos de la sección de experiencia": "I do not own any of the logos from the timeline section"}</p>
+                    </div>
+                )}}
 }
- 
-export default Footer;
+
+const mapStateToProps = (state) => ({
+    loadData: state.rootReducer
+});
+
+export default connect(mapStateToProps)(Footer);

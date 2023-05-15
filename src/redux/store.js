@@ -1,7 +1,7 @@
 import {createStore, applyMiddleware, compose} from 'redux'
 import thunk from 'redux-thunk'
 import rootReducer from './reducer';
-import { loadData, loadArt } from './actions';
+import { loadData, loadArt, loadTexts } from './actions';
 
 
 
@@ -17,6 +17,7 @@ const store = createStore(
 
 store.dispatch(loadData());
 store.dispatch(loadArt());
+store.dispatch(loadTexts());
 
 
 export default store;

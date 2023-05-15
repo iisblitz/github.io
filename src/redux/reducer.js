@@ -2,7 +2,9 @@ import { combineReducers } from "redux";
 
 const initialState = {
     time:[],
-    arts:[]
+    arts:[],
+    texts:[],
+    language: "ESP"
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -10,13 +12,21 @@ const rootReducer = (state = initialState, action) => {
         case 'LOAD_DATA':
             return {
               ...state,
-              time: action.payload,
+              time: action.payload
             };
         case 'LOAD_ARTICLES':
             return {
                 ...state,
-                arts: action.payload,
+                arts: action.payload
             }
+        case 'LOAD_TEXTS':
+            return {
+                ...state,
+                texts: action.payload
+            }
+        case 'SET_LANGUAGE':
+      return { ...state, language: action.payload };
+      
         default: return state;
         }
 }
