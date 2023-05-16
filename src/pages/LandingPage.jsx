@@ -11,41 +11,42 @@ class LandingPage extends React.Component {
     constructor (props){
         super(props);
         this.state = {
-        index:1
+        index:1,
+        loading: true
         }
         this.handleClick = this.handleClick.bind(this)
     }
     handleClick(num){this.setState({index: num})} 
   
+    
 
-
-  componentDidMount() {
-    if (!this.props.loadData) {
-      this.props.dispatch(loadData());
-    }
+  async componentDidMount() {
+    await this.props.dispatch(loadData())
+    this.setState({ loading: false });
   }
 
   renderContent() {
-    if (!this.props.loadData) {
+    
+    while(this.state.loading=== true)
+    {
       return <div>Loading...</div>;
     }
-
-    
+     
     if (this.state.index === 1) {
-      return <About />;
+      return <div><Welcome className="Welcome" handleClick={this.handleClick} /> <About /> <Footer /></div>;
     } else if (this.state.index === 2) {
-      return <Timeline />;
+      return <div><Welcome className="Welcome" handleClick={this.handleClick} /> <Timeline /> <Footer /></div>;
     } else {
-      return <Programs />;
+      return <div><Welcome className="Welcome" handleClick={this.handleClick} /> <Programs /> <Footer /></div>;
     }
   }
 
   render() {
     return (
       <div className="Landing">
-        <Welcome className="Welcome" handleClick={this.handleClick} />
+        
         {this.renderContent()}
-        <Footer />
+        
       </div>
     );
   }
