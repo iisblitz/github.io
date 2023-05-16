@@ -194,6 +194,7 @@ a {
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 .proCards {
   display: flex;

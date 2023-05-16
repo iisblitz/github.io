@@ -38,8 +38,8 @@ class Welcome extends React.Component {
                 </div>
                 }
                 <div className="langSel">
-                <button className="Wbutton esp" onClick={()=> this.handleLangChan("ESP")}>{this.props.loadData.language==="ESP"? "Español":"Inglés"}</button>
-                <button className="Wbutton eng" onClick={()=> this.handleLangChan("ENG")}>{this.props.loadData.language==="ENG"? "Spanish":"English"}</button>
+                <button className="Wbutton esp" onClick={()=> this.handleLangChan("ESP")}>{this.props.loadData.language==="ESP"? "Español":"Spanish"}</button>
+                <button className="Wbutton eng" onClick={()=> this.handleLangChan("ENG")}>{this.props.loadData.language==="ENG"? "English":"Inglés"}</button>
                 </div>
         </div>)}
     }

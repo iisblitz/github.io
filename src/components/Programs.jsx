@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 class Programs extends React.Component {
     constructor(props) {
         super(props);
-        this.CardsRef= props.loadData.map(()=> React.createRef());
+        this.CardsRef= props.loadData.arts.map(()=> React.createRef());
     }
     componentDidMount(){
         window.addEventListener('scroll',this.checkCards);
@@ -30,7 +30,7 @@ class Programs extends React.Component {
         return (
             <div>
                 <div className="proDisplay">
-                    {this.props.loadData.map((e,index) =>
+                    {this.props.loadData.arts.filter(e=> e.language=== this.props.loadData.language).map((e,index) =>
                     (
 
                         <div key={e.id} className={`Card ${e.Color}`} ref={this.CardsRef[index]}>
@@ -39,10 +39,10 @@ class Programs extends React.Component {
                                     <img src={e.Logo} alt="workLogo" />
                                 </div>
                                 <div className="texts">
-                                    <h3>Project Name: {e.Title}</h3>
-                                    <p>Project for: {e.Work}</p>
-                                    <p>Description: {e.ShortDescription}</p>
-                                    <p>Duration: {e.TimeConstraints}</p> 
+                                    <h3>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].del}: {e.Title}</h3>
+                                    <p>{this.props.loadData.language==="ESP"? "Negocio":"Project for"}: {e.Work}</p>
+                                    <p>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].desc}: {e.ShortDescription}</p>
+                                    <p>{this.props.loadData.language==="ESP"? "Duración":"Duration"}: {e.TimeConstraints}</p> 
                                 </div>
                                 <div className={`BOK`}>
                                     
@@ -62,7 +62,7 @@ class Programs extends React.Component {
 
 
 const mapStateToProps = (state) => ({
-    loadData: state.rootReducer.arts
+    loadData: state.rootReducer
 });
 
 export default connect(mapStateToProps)(Programs);

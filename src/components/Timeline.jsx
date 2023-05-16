@@ -28,17 +28,17 @@ class Timeline extends React.Component {
 <div className="Timeline-Window">
         <div className="TL-Menu">
           <button key="1" onClick={(event)=>this.handleToggle(event)} value="Work" className='TL-MenuB'>
-            <i className="fa-solid fa-industry" /><p>Work Experience</p>
+            <i className="fa-solid fa-industry" /><p>{this.props.loadData.language==="ESP"? "Experiencias Laborales":"Work Experiences"}</p>
           </button>
           <button key="2" onClick={(event)=>this.handleToggle(event)} value="Education" className='TL-MenuB'>
-            <i className="fa-solid fa-school" /><p>Education</p>
+            <i className="fa-solid fa-school" /><p>{this.props.loadData.language==="ESP"? "Eduación":"Education"}</p>
           </button>      
           <button key="3" onClick={(event)=>this.handleToggle(event)} value="Hobbies" className='TL-MenuB'>
-            <i className="fa-solid fa-person-walking-luggage" /><p>Hobbies</p>
+            <i className="fa-solid fa-person-walking-luggage" /><p>{this.props.loadData.language==="ESP"? "Pasa tiempos":"Hobbies"}</p>
           </button>
         </div>
-        <VerticalTimeline>
-        {this.props.loadData && this.props.loadData.filter(e=> this.state[e.Category]===true).filter(e=> e.Language === this.state.Language).sort((a, b) => new Date(b.End) - new Date(a.End)).map(e => (
+                <VerticalTimeline>
+        {this.props.loadData && this.props.loadData.time.filter(e=> this.state[e.Category]===true).filter(e=> e.Language === this.props.loadData.language).sort((a, b) => new Date(b.End) - new Date(a.End)).map(e => (
             <VerticalTimelineElement 
               key={e.id}
               className="vertical-timeline-element--work"
@@ -74,6 +74,6 @@ class Timeline extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  loadData: state.rootReducer.time
+  loadData: state.rootReducer
 });
 export default connect(mapStateToProps)(Timeline);
