@@ -22,7 +22,6 @@ class About extends React.Component{
                 return <div>...Loading</div>
             }
             else{
-                console.log(this.props)
                 return(
                     <div>
                     <div className="profile">

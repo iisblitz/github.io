@@ -16,25 +16,28 @@ class Programs extends React.Component {
     }
 
     checkCards = () => {
-        const triggerBottom = window.innerHeight / 5*4;
-        this.CardsRef.forEach(cardRef =>{
-            const card = cardRef.current;
+        const triggerBottom = window.innerHeight / 5 * 3;
+        this.CardsRef.forEach(cardRef => {
+          const card = cardRef.current;
+          if (card) {
             const cardTop = card.getBoundingClientRect().top;
-
-            if(cardTop < triggerBottom){
-                card.classList.add('show');
-            } else { card.classList.remove('show')}
-        })
-    }
-    render() {
+            if (cardTop < triggerBottom) {
+              card.classList.add('show');
+            } else {
+              card.classList.remove('show');
+            }
+          }
+        });
+      };
+          render() {
         return (
             <div>
                 <div className="proDisplay">
-                    {this.props.loadData.arts.filter(e=> e.language=== this.props.loadData.language).map((e,index) =>
+                    {this.props.loadData.arts.filter(e=> e.Langauge=== this.props.loadData.language).map((e,index) =>
                     (
 
                         <div key={e.id} className={`Card ${e.Color}`} ref={this.CardsRef[index]}>
-                            <Link to={e.Work + "/" + e.Title} className={`proCards`}>
+                            <Link to={`Project/${e.id}`} className={`proCards`}>
                                 <div className="img">
                                     <img src={e.Logo} alt="workLogo" />
                                 </div>

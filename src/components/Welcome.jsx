@@ -25,7 +25,7 @@ class Welcome extends React.Component {
         return (
      <div className="header">
                 <div className="headerImg">
-                <Link to="../">
+                <Link to="../portfolio">
                 <img src="https://i.postimg.cc/QN1V26jF/Logo-removebg-preview.png" alt="header" />
                 </Link>
                 </div>

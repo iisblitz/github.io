@@ -27,19 +27,20 @@ class Timeline extends React.Component {
     return (
 <div className="Timeline-Window">
         <div className="TL-Menu">
-          <button key="1" onClick={(event)=>this.handleToggle(event)} value="Work" className='TL-MenuB'>
+          <button key="1" onClick={(event)=>this.handleToggle(event)} value={this.props.loadData.language==="ESP"? "Trabajo":"Work"} className='TL-MenuB'>
             <i className="fa-solid fa-industry" /><p>{this.props.loadData.language==="ESP"? "Experiencias Laborales":"Work Experiences"}</p>
           </button>
-          <button key="2" onClick={(event)=>this.handleToggle(event)} value="Education" className='TL-MenuB'>
+          <button key="2" onClick={(event)=>this.handleToggle(event)} value={this.props.loadData.language==="ESP"? "Educación":"Education"} className='TL-MenuB'>
             <i className="fa-solid fa-school" /><p>{this.props.loadData.language==="ESP"? "Eduación":"Education"}</p>
           </button>      
-          <button key="3" onClick={(event)=>this.handleToggle(event)} value="Hobbies" className='TL-MenuB'>
+          <button key="3" onClick={(event)=>this.handleToggle(event)} value={this.props.loadData.language==="ESP"? "Pasa tiempos":"Hobbies"} className='TL-MenuB'>
             <i className="fa-solid fa-person-walking-luggage" /><p>{this.props.loadData.language==="ESP"? "Pasa tiempos":"Hobbies"}</p>
           </button>
         </div>
+        
                 <VerticalTimeline>
         {this.props.loadData && this.props.loadData.time.filter(e=> this.state[e.Category]===true).filter(e=> e.Language === this.props.loadData.language).sort((a, b) => new Date(b.End) - new Date(a.End)).map(e => (
-            <VerticalTimelineElement 
+           <VerticalTimelineElement 
               key={e.id}
               className="vertical-timeline-element--work"
               contentStyle={{ background: 'rgb(0,0,0)', color: '#fff' }}
@@ -53,7 +54,7 @@ class Timeline extends React.Component {
                 itemAlign: 'center',
               }}
               icon={<i className={e.Icon}></i>}>              
-                <Link className="TL-container" to={e.BusinessName}>
+                <Link className="TL-container" to={`Work/${e.id}`}>
                   <div className="TL-img">
                   <img src={e.Image} alt="resource loading 1" />
                   </div>
