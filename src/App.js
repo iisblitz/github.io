@@ -9,10 +9,10 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/portfolio/' element={<LandingPage />}></Route>
-        <Route path='/portfolio/Work/:id' element={<Work />}></Route>
-        <Route path='/portfolio/Project/:id' element={<Projects />}></Route>
-        <Route path='/portfolio/Maintenance' element={<Maintenance/>}/>
+        <Route path='/' element={<LandingPage />}></Route>
+        <Route path='/Work/:id' element={<Work />}></Route>
+        <Route path='/Project/:id' element={<Projects />}></Route>
+        <Route path='/Maintenance' element={<Maintenance/>}/>
       </Routes>
     </Router>
   );

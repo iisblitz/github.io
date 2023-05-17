@@ -17,7 +17,7 @@ class Work extends React.Component {
     }
 
     componentDidMount(){        
-        let url = window.location.href.split("/")[5].replace("%20"," ");
+        let url = window.location.href.split("/")[4].replace("%20"," ");
         let details = this.props.loadData.time.filter(e=> e.id === url)[0];
         let projects = this.props.loadData.arts.filter(e => e.Work === details.BusinessName);
         const { language, texts } = this.props.loadData;
@@ -72,7 +72,7 @@ class Work extends React.Component {
               ))}
 </div>
             </div>
-            <Link to="../portfolio">
+            <Link to="../">
               {this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].link}
             </Link>
           </div>
