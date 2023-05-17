@@ -15,7 +15,7 @@ class Projects extends React.Component {
     }
     componentDidMount(){
         const { language, texts } = this.props.loadData;
-        let url = window.location.href.split("/")[4].replace("%20"," ");
+        let url = window.location.href.split("/")[5].replace("%20"," ");
         let details = this.props.loadData.arts.filter(e=> e.id === url)[0];
         this.setState({loading:false, url, details, language, texts});
     }
@@ -56,7 +56,7 @@ class Projects extends React.Component {
                 </div>    
                 </div>
                 </div>
-                <Link to="../">{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].link2}</Link>
+                <Link to="../portfolio">{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].link2}</Link>
               
             </div>
             
