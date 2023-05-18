@@ -10,8 +10,8 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<LandingPage />}></Route>
-        <Route path='/Work/:id' element={<Work />}></Route>
-        <Route path='/Project/:id' element={<Projects />}></Route>
+        <Route path='/Work/:id' element={<Work id={id}/>}></Route>
+        <Route path='/Project/:id' element={<Projects id={id}/>}></Route>
         <Route path='/Maintenance' element={<Maintenance/>}/>
       </Routes>
     </Router>
