@@ -37,7 +37,7 @@ class Programs extends React.Component {
                     (
 
                         <div key={e.id} className={`Card ${e.Color}`} ref={this.CardsRef[index]}>
-                            <Link to={`Project/${e.id}`} className={`proCards`}>
+                            <Link to={`/Project/${e.id}`} className={`proCards`}>
                                 <div className="img">
                                     <img src={e.Logo} alt="workLogo" />
                                 </div>
