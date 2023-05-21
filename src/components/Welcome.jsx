@@ -9,8 +9,8 @@ class Welcome extends React.Component {
             loading:true
         }
     }
-    handleLangChan = (e) =>{
-        this.props.setLanguage(e);
+    handleLangChan = () =>{
+        this.props.loadData.language=== "ESP"? this.props.setLanguage("ENG"): this.props.setLanguage("ESP")
     }
     componentDidMount(){
         const { language, texts } = this.props.loadData;
@@ -39,8 +39,7 @@ class Welcome extends React.Component {
                 </div>
                 }
                 <div className="langSel">
-                <button className="Wbutton esp" onClick={()=> this.handleLangChan("ESP")}>{this.props.loadData.language==="ESP"? "Español":"Spanish"}</button>
-                <button className="Wbutton eng" onClick={()=> this.handleLangChan("ENG")}>{this.props.loadData.language==="ENG"? "English":"Inglés"}</button>
+                <button className="Wbutton esp" onClick={()=> this.handleLangChan()}>{this.props.loadData.language==="ESP"? "English":"Español"}</button>
                 </div>
                 
         </div>)}
