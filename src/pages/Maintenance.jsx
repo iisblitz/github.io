@@ -216,6 +216,7 @@ class Maintenance extends React.Component{
             <h3>Add an Project</h3>
             <form>
             <label>Langauge:</label><input name="Langauge" value={this.state.article.Langauge} type="text" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
+            <label>Number:</label><input name="Number" value={this.state.article.Number} type="text" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
             <label>Title:</label><input name="Title" value={this.state.article.Title} type="text" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
             <label>Education:</label><input name="Education" value={this.state.article.Education} type="text" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
             <label>Work:</label><input name="Work" value={this.state.article.Work} type="text" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />

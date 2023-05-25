@@ -17,9 +17,10 @@ class Work extends React.Component {
     }
 
     componentDidMount(){        
-        let url = window.location.href.split("/")[4];
-        let details = this.props.loadData.time.filter(e=> e.id === url)[0];
-        let projects = this.props.loadData.arts.filter(e => e.Work === details.BusinessName);
+        let url = window.location.href.split("/")[4].replace("%20"," ");
+        let details = this.props.loadData.time.filter(e=> e.BusinessName === url);
+        let projects = this.props.loadData.arts.filter(e => e.Work === url);
+        console.log(projects)
         const { language, texts } = this.props.loadData;
         this.setState({loading:false, url, details, projects, language, texts});
       }
@@ -36,37 +37,36 @@ class Work extends React.Component {
           <div className="workTemplate">
             <Welcome/>
             
-            <h1>{details.BusinessName}</h1>
+            <h1>{details.filter(e=>e.Language=== this.props.loadData.language)[0].BusinessName}</h1>
             <div className="workHeaders">
               <div className="workHeaderImg">
-                <img src={details.Image} alt="logo" />
+                <img src={details.filter(e=>e.Language=== this.props.loadData.language)[0].Image} alt="logo" />
               </div>
               <div className="businessData">
                 <h2>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].desc}</h2>
-                <p>{details.BusinessDescription}</p>
+                <p>{details.filter(e=>e.Language === this.props.loadData.language)[0].BusinessDescription}</p>
               </div>
               <div className="workDataTL">
-                <h4> {this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].ti}: {details.Begin} </h4>
-                <h4>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].te}: {details.End}</h4>
-                <p>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].loc}: {details.Location}</p>
+                <h4> {this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].ti}: {details.filter(e=>e.Language=== this.props.loadData.language)[0].Begin} </h4>
+                <h4>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].te}: {details.filter(e=>e.Language=== this.props.loadData.language)[0].End}</h4>
+                <p>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].loc}: {details.filter(e=>e.Language=== this.props.loadData.language)[0].Location}</p>
               </div>
             </div>
             <div className="jobData">
-              <h1>{this.props.loadData.language === "ESP"? `Descripción de ${details.Category}`: `${details.Category} description`}</h1>
-              <p>{details.JobDescription}</p>
+              <h1>{this.props.loadData.language === "ESP"? `Descripción de ${details.filter(e=>e.Language=== this.props.loadData.language)[0].Category}`: `${details.filter(e=>e.Language=== this.props.loadData.language)[0].Category} description`}</h1>
+              <p>{details.filter(e=>e.Language=== this.props.loadData.language)[0].JobDescription}</p>
             </div>
             <div className="workProjects">
               <div className="workProjectTitle">
               <h1>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].header}</h1>
               </div>
               <div className="WorkWrap">
-              {projects.map(e =>(
+                {console.log(projects[0].Langauge)}
+              {projects.filter(e=> e.Langauge === this.props.loadData.language).map(e =>(
                 <div key={e.id} className="projectBullet">
-                  <Link to={`./${e.Title}`}>
+                  <Link to={`../Project/${e.number}`}>
                     <img src={e.Logo} alt="Logo" />
                     <p>{e.Title}</p>
-                    <p>{e.ShortDescription}</p>
-                    <p>Status: {e.Status}</p>
                     </Link>
                 </div>
               ))}

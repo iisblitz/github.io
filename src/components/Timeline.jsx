@@ -54,7 +54,7 @@ class Timeline extends React.Component {
                 itemAlign: 'center',
               }}
               icon={<i className={e.Icon}></i>}>              
-                <Link className="TL-container" to={`/Work/${e.id}`}>
+                <Link className="TL-container" to={`/Work/${e.BusinessName}`}>
                   <div className="TL-img">
                   <img src={e.Image} alt="resource loading 1" />
                   </div>

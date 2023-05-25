@@ -16,7 +16,7 @@ class Projects extends React.Component {
     componentDidMount(){
         const { language, texts } = this.props.loadData;
         let url = window.location.href.split("/")[4];
-        let details = this.props.loadData.arts.filter(e=> e.id === url)[0];
+        let details = this.props.loadData.arts.filter(e=> e.number === url);
         this.setState({loading:false, url, details, language, texts});
     }
     render(){
@@ -32,6 +32,7 @@ class Projects extends React.Component {
             <div className="A3F">
                 
                 <Welcome/>
+                {console.log(details)}
                 <h1>{details.Title}</h1>
                 <div className="Cols">
                 <div className="backGround">
@@ -45,7 +46,8 @@ class Projects extends React.Component {
                     <div className="Tools"><h3>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].tools}:</h3>{details.Tools}</div>
                     <div className="Plan">
                         <h3>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].plan}</h3>
-                        <ol>{details.Plan}</ol>
+                        <ol>{//details.Plan.split('",').map(e=><li>{e}</li>)
+                        }</ol>
                     </div>
                 </div>
                 <div className="Results">
