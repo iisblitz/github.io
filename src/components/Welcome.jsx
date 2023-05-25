@@ -40,7 +40,7 @@ class Welcome extends React.Component {
                 }
                 <div className="langSel">
                 <button className="Wbutton esp" onClick={()=> this.handleLangChan()}>{this.props.loadData.language==="ESP"? "English":"Español"}</button>
-                <Link to="../">{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].link2}</Link>
+                <Link to="Maintenance">SO</Link>
                 </div>
                 
         </div>)}

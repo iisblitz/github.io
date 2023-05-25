@@ -20,7 +20,6 @@ class Work extends React.Component {
         let url = window.location.href.split("/")[4].replace("%20"," ");
         let details = this.props.loadData.time.filter(e=> e.BusinessName === url);
         let projects = this.props.loadData.arts.filter(e => e.Work === url);
-        console.log(projects)
         const { language, texts } = this.props.loadData;
         this.setState({loading:false, url, details, projects, language, texts});
       }
