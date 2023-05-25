@@ -43,7 +43,9 @@ class Maintenance extends React.Component{
             Tools:[],
             Status:"",
             Image:"",
-            Deliverable:""},
+            Deliverable:"",
+            number:""
+        },
 
             texts:{
                 language:"",
@@ -74,8 +76,8 @@ class Maintenance extends React.Component{
                     link2:"",
                 
 
-            }
-
+            },
+            success: false,
         }
         this.handleAlt = this.handleAlt.bind(this);
         this.handleAddArticle = this.handleAddArticle.bind(this);
@@ -87,6 +89,7 @@ class Maintenance extends React.Component{
         this.handleChangeTimeline = this.handleChangeTimeline.bind(this);
         this.handleChangeArticle = this.handleChangeArticle.bind(this);
         this.handleChangeTexts = this.handleChangeTexts.bind(this);
+        this.resetForm = this.resetForm.bind(this);
     }
     componentDidMount(){
         let details = this.props.loadData;
@@ -101,36 +104,52 @@ class Maintenance extends React.Component{
             },
           });
           console.log("Article added successfully. Response:", response);
+          this.resetForm();
+          this.setState({ success: true });
+          alert("Article added successfully.");
         } catch (error) {
           console.error("Error adding article:", error);
+          this.setState({ success: false });
+          alert("Failed to add article.");
         }
-      }
+      };      
+      handleAddTimeLine = async (e) => {
+        e.preventDefault();
+        try {
+          await axios.post("https://shy-erin-panther-tux.cyclic.app/", this.state.timeline, {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          console.log("Timeline added successfully.");
+          this.resetForm(); // Reset the form fields
+          this.setState({ success: true }); // Set success state to true
+          alert("Timeline added successfully."); // Show a confirmation alert
+        } catch (err) {
+          console.error("Error adding timeline:", err);
+          this.setState({ success: false });
+          alert("Failed to add timeline."); // Show a failure alert
+        }
+      };
+
+
+      handleAddTexts = async (e) => {
+        e.preventDefault();
+        try {
+          await axios.post("https://shy-erin-panther-tux.cyclic.app/texts", this.state.texts, {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          this.reset();
+          alert("Texts added successfully.");
+        } catch (err) {
+          console.error("Error adding texts:", err);
+          alert("Failed to add texts. Please try again.");
+        }
+      };
       
-    handleAddTimeLine = async (e) =>{
-        e.preventDefault();
-        try{
-            await axios.post("https://shy-erin-panther-tux.cyclic.app/", this.state.timeline, {
-                headers: {
-                  "Content-Type": "application/json",
-                },
-              })
-        }catch(err){
-            console.error('Error adding document: ', err);
-        }}
-    handleAddTexts = async (e) =>{
-        e.preventDefault();
-                try{
-            await axios.post("https://shy-erin-panther-tux.cyclic.app/texts", this.state.texts, {
-                headers: {
-                  "Content-Type": "application/json",
-                },
-            })
-        }catch(err){
-            console.error('Error adding document: ', err);
-        }}
-
-
-    handleDeleteTimeline = async (id) => {
+      handleDeleteTimeline = async (id) => {
         try{await axios.delete(`https://shy-erin-panther-tux.cyclic.app/${id}`);
         }catch(err){console.error('Error deleting document: ', err.response.data)}
     }
@@ -174,7 +193,74 @@ class Maintenance extends React.Component{
         const value= b;
         this.setState(prevState => ({texts:{...prevState.texts,[name]:value}}))
     }
-    
+    resetForm() {
+        this.setState({
+          timeline: {
+            Language: "",
+            Image: "",
+            Icons: "",
+            Category: "",
+            Name: "",
+            Location: "",
+            BusinessName: "",
+            Skills: [],
+            BusinessDescription: "",
+            JobDescription: "",
+            Schedule: "",
+            WorkTime: "",
+            Begin: new Date(),
+            End: new Date(),
+          },
+          article: {
+            Language: "",
+            Title: "",
+            Education: "",
+            Work: "",
+            Location: "",
+            Logo: "",
+            ShortDescription: "",
+            ProblemDescription: "",
+            DesiredState: "",
+            Goals: "",
+            TimeConstraints: "",
+            Plan: [],
+            Tools: [],
+            Status: "",
+            Image: "",
+            Deliverable: "",
+            number:""
+          },
+          texts: {
+            language: "",
+            main: "",
+            a3: "",
+            experience: "",
+            ci: "",
+            subtitle: "",
+            description: "",
+            bio: "",
+            etitle: "",
+            ti: "",
+            te: "",
+            loc: "",
+            desc: "",
+            pro: "",
+            link: "",
+            header: "",
+            bg: "",
+            pd: "",
+            ds: "",
+            g: "",
+            ex: "",
+            tools: "",
+            plan: "",
+            del: "",
+            status: "",
+            link2: "",
+          },
+          success: true,
+        });
+      }
         
         
     render(){
@@ -219,7 +305,7 @@ class Maintenance extends React.Component{
             <h3>Add an Project</h3>
             <form>
             <label>Langauge:</label><input name="Langauge" value={this.state.article.Langauge} type="text" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
-            <label>Number:</label><input name="Number" value={this.state.article.number} type="text" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
+            <label>number:</label><input name="number" value={this.state.article.number} type="text" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
             <label>Title:</label><input name="Title" value={this.state.article.Title} type="text" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
             <label>Education:</label><input name="Education" value={this.state.article.Education} type="text" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
             <label>Work:</label><input name="Work" value={this.state.article.Work} type="text" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
@@ -295,7 +381,7 @@ class Maintenance extends React.Component{
             ))}
 
         <button onClick={this.handleAlt}> Change forms</button>
-            <Link to='./'>Return</Link>
+            <Link to='../'>Return</Link>
         </div>
         )
     }

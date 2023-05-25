@@ -71,7 +71,7 @@ class Work extends React.Component {
               ))}
 </div>
             </div>
-            <Link to="../portfolio">
+            <Link to="../">
               {this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].link}
             </Link>
           </div>

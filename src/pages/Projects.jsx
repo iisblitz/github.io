@@ -32,7 +32,7 @@ class Projects extends React.Component {
             <div className="A3F">
                 
                 <Welcome/>
-                {console.log(details)}
+                <Link to="Maintenance">M</Link>
                 <h1>{details.Title}</h1>
                 <div className="Cols">
                 <div className="backGround">
@@ -59,7 +59,7 @@ class Projects extends React.Component {
                 </div>
                 </div>
                 
-              
+                <Link to="../"></Link>
             </div>
             
           )
