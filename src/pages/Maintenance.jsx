@@ -92,17 +92,20 @@ class Maintenance extends React.Component{
         let details = this.props.loadData;
         this.setState({loading:false, details});
     }
-    handleAddArticle = async (e) =>{
+    handleAddArticle = async (e) => {
         e.preventDefault();
-        try{
-            await axios.post("https://shy-erin-panther-tux.cyclic.app/art", this.state.article, {
-                headers: {
-                  "Content-Type": "application/json",
-                },
-              })
-        }catch(err){
-            console.error('Error adding document: ', err);
-        }}
+        try {
+          const response = await axios.post("https://shy-erin-panther-tux.cyclic.app/art", this.state.article, {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          console.log("Article added successfully. Response:", response);
+        } catch (error) {
+          console.error("Error adding article:", error);
+        }
+      }
+      
     handleAddTimeLine = async (e) =>{
         e.preventDefault();
         try{
@@ -216,7 +219,7 @@ class Maintenance extends React.Component{
             <h3>Add an Project</h3>
             <form>
             <label>Langauge:</label><input name="Langauge" value={this.state.article.Langauge} type="text" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
-            <label>Number:</label><input name="Number" value={this.state.article.Number} type="text" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
+            <label>Number:</label><input name="Number" value={this.state.article.number} type="text" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
             <label>Title:</label><input name="Title" value={this.state.article.Title} type="text" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
             <label>Education:</label><input name="Education" value={this.state.article.Education} type="text" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
             <label>Work:</label><input name="Work" value={this.state.article.Work} type="text" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
