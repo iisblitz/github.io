@@ -58,7 +58,7 @@ class Projects extends React.Component {
                 </div>    
                 </div>
                 </div>
-                <Link to="../portfolio">{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].link2}</Link>
+                
               
             </div>
             
