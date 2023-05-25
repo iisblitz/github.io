@@ -4,8 +4,8 @@ import LandingPage from './pages/LandingPage'
 import Work from "./pages/Work";
 import Projects from "./pages/Projects";
 import Maintenance from "./pages/Maintenance";
-import Studies from ".pages/Studies";
-import Articles from ".pages/Articles"
+import Studies from "./pages/Studies";
+import Articles from "./pages/Articles"
 
 function App() {
   return (
