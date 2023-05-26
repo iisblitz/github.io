@@ -10,7 +10,7 @@ import Articles from "./pages/Articles"
 function App() {
   return (
     <Router>
-      <Routes>
+      <Routes className="root">
         <Route path='/' element={<LandingPage />}></Route>
         <Route path='/Work/:name' element={<Work/>}></Route>
         <Route path='/Project/:number' element={<Projects/>}></Route>

@@ -4,10 +4,19 @@ body {
   font-family: "Helvetica";
 }
 
+.root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 /*Landing*/
 .Landing {
   margin: 0;
   height: 80vh;
+}
+
+.container {
+  overflow: hidden;
 }
 
 /*About*/
@@ -17,22 +26,21 @@ body {
 .profile {
   display: flex;
   flex-direction: row;
-  margin: 10% 0;
+  margin: 0;
   justify-content: space-evenly;
-  width: 85vw;
+  width: 100vw;
 }
 .profpic img {
   border-radius: 50%;
   margin: 2rem;
-  width: 20rem;
+  width: 15rem;
 }
 .data {
-  margin: auto;
-  margin-bottom: 10%;
+  margin-right: 10px;
 }
 .data p {
   text-align: left;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 .Footer {
@@ -45,7 +53,7 @@ body {
   font-size: 1rem;
   border-top: 1px solid white;
 }
-p.Footer {
+.Footer p {
   margin: 0;
 }
 a {
@@ -62,6 +70,9 @@ a {
   margin: 0 auto;
   width: 100vw;
   justify-content: space-around;
+}
+.workTitle {
+  margin: 0;
 }
 
 .headerImg {
@@ -109,7 +120,7 @@ a {
 .TL-Menu {
   display: flex;
   flex-direction: row;
-  margin: 2rem auto;
+  margin: 0 auto;
   justify-content: space-evenly;
 }
 .TL-MenuB {
@@ -146,6 +157,7 @@ a {
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
+  overflow: hidden;
 }
 .workHeaders {
   display: flex;
@@ -154,17 +166,30 @@ a {
   justify-content: space-evenly;
 }
 .businessData {
-  margin: 3%;
   text-align: justify;
+  width: 70%;
+  margin: 0 10px;
 }
 .workDataTL {
   display: flex;
   flex-direction: column;
   width: 15%;
-  margin: 0%;
+  margin: 0;
+}
+.workDataTL h4 {
+  margin: 0;
+  font-size: 0.8rem;
+}
+.workDataTL p {
+  margin: 0;
+  font-size: 0.8rem;
 }
 .jobData {
-  margin: 10%;
+  margin: 0 5%;
+}
+.jobData h1 {
+  margin-top: 0;
+  margin-bottom: 2%;
 }
 .jobData p {
   text-align: justify;
@@ -197,8 +222,6 @@ a {
   margin: 5%;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 .proCards {
   display: flex;
@@ -238,32 +261,41 @@ a {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin: 0;
 }
+
+.A3F h1 {
+  margin: 0;
+}
+
 .Cols {
   display: flex;
   flex-direction: row;
   border: 1px solid white;
   justify-content: space-between;
-  margin: 3rem;
+  margin: 0 3rem;
   height: 80%;
 }
 .backGround {
-  width: 25%;
+  width: 30%;
 }
 .backGround div {
-  margin: 30% 0;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 .Solution {
-  width: 25%;
+  width: 30%;
 }
 .Solution div {
-  margin: 30% 0;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 .Results {
-  width: 25%;
+  width: 30%;
 }
 .Results div {
-  margin: 30% 0;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .Deliverable img {
@@ -271,7 +303,7 @@ a {
 }
 @media only screen and (max-width: 600px) {
   .headerImg img {
-    width: 70vw;
+    width: 50vw;
   }
   .profile {
     flex-direction: column;
@@ -293,7 +325,6 @@ a {
     width: 95%;
     align-items: center;
   }
-
   div.img {
     display: flex;
     flex-direction: row;
@@ -307,7 +338,6 @@ a {
     flex-direction: column;
     width: 100%;
   }
-
   .backGround {
     width: 100%;
   }
@@ -333,5 +363,30 @@ a {
   .Card {
     font-size: 1rem;
     flex-direction: column;
+  }
+  .Menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Wbutton {
+    font-size: small;
+    margin: 0;
+  }
+  .data {
+    width: 95vw;
+    margin-bottom: 5%;
+  }
+  .data p {
+    text-align: justify;
+  }
+  .data h1 {
+    text-align: center;
+  }
+  .icons {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: space-evenly;
   }
 }

@@ -56,7 +56,7 @@ class Timeline extends React.Component {
               icon={<i className={e.Icon}></i>}>              
                 <Link className="TL-container" to={`/Work/${e.BusinessName}`}>
                   <div className="TL-img">
-                  <img src={e.Image} alt="resource loading 1" />
+                  <img src={e.Image} alt="resource loading" />
                   </div>
                   <div className="TL-Text">
                   <h3 className="vertical-timeline-element-title">{e.Name}</h3>

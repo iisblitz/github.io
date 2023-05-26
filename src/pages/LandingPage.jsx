@@ -33,17 +33,17 @@ class LandingPage extends React.Component {
     }
      
     if (this.state.index === 1) {
-      return <div><Welcome className="Welcome" handleClick={this.handleClick} /> <About /> <Footer /></div>;
+      return <div className="container"><Welcome className="Welcome" handleClick={this.handleClick} /> <About /> <Footer /></div>;
     } else if (this.state.index === 2) {
-      return <div><Welcome className="Welcome" handleClick={this.handleClick} /> <Timeline /> <Footer /></div>;
+      return <div className="container"><Welcome className="Welcome" handleClick={this.handleClick} /> <Timeline /> <Footer /></div>;
     } else {
-      return <div><Welcome className="Welcome" handleClick={this.handleClick} /> <Programs /> <Footer /></div>;
+      return <div className="container"><Welcome className="Welcome" handleClick={this.handleClick} /> <Programs /> <Footer /></div>;
     }
   }
 
   render() {
     return (
-      <div className="Landing">
+      <div className='Landing'>
         
         {this.renderContent()}
         

@@ -45,7 +45,7 @@ class Projects extends React.Component {
                     <div className="Tools"><h3>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].tools}:</h3>{details.filter(e=>e.Langauge === this.props.loadData.language)[0].Tools}</div>
                     <div className="Plan">
                         <h3>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].plan}</h3>
-                        <ol>{details.filter(e=>e.Langauge === this.props.loadData.language)[0].Plan.split('",').map(e=><li>{e}</li>)}</ol>
+                        <ol>{details.filter(e=>e.Langauge === this.props.loadData.language)[0].Plan.split('","').map(e=><li>{e}</li>)}</ol>
                     </div>
                 </div>
                 <div className="Results">

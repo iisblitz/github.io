@@ -36,7 +36,7 @@ class Work extends React.Component {
           <div className="workTemplate">
             <Welcome/>
             
-            <h1>{details.filter(e=>e.Language=== this.props.loadData.language)[0].BusinessName}</h1>
+            <h1 className="workTitle">{details.filter(e=>e.Language=== this.props.loadData.language)[0].BusinessName}</h1>
             <div className="workHeaders">
               <div className="workHeaderImg">
                 <img src={details.filter(e=>e.Language=== this.props.loadData.language)[0].Image} alt="logo" />

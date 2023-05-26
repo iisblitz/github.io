@@ -23,14 +23,15 @@ class About extends React.Component{
             }
             else{
                 return(
-                    <div>
+                 
                     <div className="profile">
                         <div className="profpic">
                         <img src={pic} alt="ProfilePic"/>
                         </div>
                         <div className='data'>
                             <h1>David Gonzalez</h1>
-                            <p className='icons'><a href="https://www.linkedin.com/in/david-gonzalez-alanis/"><i className="fa-brands fa-linkedin"></i> Linkedin</a> 
+                            <p className='icons'>
+                            <a href="https://www.linkedin.com/in/david-gonzalez-alanis/"><i className="fa-brands fa-linkedin"></i> Linkedin</a> 
                             <a href="https://github.com/iisblitz"><i className="fa-brands fa-github"> </i> GitHub</a>
                             <a href="https://wa.me/525514515527"><i className="fa fa-whatsapp"></i>WhatsApp </a>
                             </p>
@@ -39,11 +40,11 @@ class About extends React.Component{
                             <p>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].subtitle}</p>
                             <p>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].description}</p>
                             <p>{this.props.loadData.language === "ESP"? "Mi historia:": "Short bio:"}</p>
-                            <p>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].bio}</p>
+                            <p>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].bio.split(("{/n}")).map(e=><p>{e}</p>)}</p>
                     
                         </div>
                     </div>
-                </div>
+               
                 )
             }
         }
