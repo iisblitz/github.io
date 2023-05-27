@@ -31,24 +31,21 @@ class Welcome extends React.Component {
                 </div>
                 {url[3] ?
                 <div/>:
-                
                 <div className="Menu">
                 <button className="Wbutton" onClick={event=> this.props.handleClick(1)}>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].main}</button>
                 <button className="Wbutton" onClick={event=> this.props.handleClick(2)}>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].etitle}</button>
                 <button className="Wbutton" onClick={event=> this.props.handleClick(3)}>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].a3}</button>
+                <button className="Wbutton" onClick={event=> this.props.handleClick(4)}>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].articles}</button>
+                <button className="Wbutton" onClick={event=> this.props.handleClick(5)}>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].notes}</button>
                 </div>
                 }
                 <div className="langSel">
                 <button className="Wbutton esp" onClick={()=> this.handleLangChan()}>{this.props.loadData.language==="ESP"? "English":"Español"}</button>
-                
                 </div>
-                
         </div>)}
     }
 }
-
 const mapStateToProps = (state) => ({
     loadData: state.rootReducer
 });
-
 export default connect(mapStateToProps, {setLanguage})(Welcome);

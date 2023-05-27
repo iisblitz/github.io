@@ -60,7 +60,6 @@ class Work extends React.Component {
               <h1>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].header}</h1>
               </div>
               <div className="WorkWrap">
-                {console.log(projects[0].Langauge)}
               {projects.filter(e=> e.Langauge === this.props.loadData.language).map(e =>(
                 <div key={e.id} className="projectBullet">
                   <Link to={`../Project/${e.number}`}>

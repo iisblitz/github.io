@@ -2,6 +2,8 @@ import React from "react";
 import {connect} from 'react-redux'
 import { Link } from "react-router-dom";
 import Welcome from "../components/Welcome";
+import Image from '../Banner.png'
+import { Helmet } from "react-helmet";
 class Projects extends React.Component {
     constructor(props){
         super(props);
@@ -30,7 +32,23 @@ class Projects extends React.Component {
 
           return(
             <div className="A3F">
-                
+                <Helmet>
+                <title>Protafolio y CV de David Gonzalez / David Gonzalez's Portfolio & CV</title>
+                <meta name="title" content={details.filter(e=>e.Langauge === this.props.loadData.language)[0].Title}/>
+                <meta name="description" content={details.filter(e=>e.Langauge === this.props.loadData.language)[0].ProblemDescription}/>
+                <meta property="og:type" content="website"/>
+                <meta property="og:url" content="https://iisdbga.online/"/>
+                <meta property="og:title" content={details.filter(e=>e.Langauge === this.props.loadData.language)[0].Title}/>
+                <meta property="og:description" content={details.filter(e=>e.Langauge === this.props.loadData.language)[0].ProblemDescription}/>
+                <meta property="og:image" content={Image}/>
+                <meta property="twitter:card" content="summary_large_image"/>
+                <meta property="twitter:url" content="https://iisdbga.online/"/>
+                <meta property="twitter:title" content={details.filter(e=>e.Langauge === this.props.loadData.language)[0].Title}/>
+                <meta property="twitter:description" content={details.filter(e=>e.Langauge === this.props.loadData.language)[0].ProblemDescription}/>
+                <meta property="twitter:image" content={Image}/>
+                </Helmet>
+
+
                 <Welcome/>
                 <h1>{details.filter(e=>e.Langauge === this.props.loadData.language)[0].Title}</h1>
                 <div className="Cols">
