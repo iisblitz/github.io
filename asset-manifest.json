@@ -1,14 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.12c76cec.css",
-    "main.js": "/static/js/main.7a9fe61e.js",
+    "main.js": "/static/js/main.2e93d5b5.js",
+    "static/media/Banner.png": "/static/media/Banner.5dd95518eb109a1fb295.png",
     "static/media/DBGA_pic.jpg": "/static/media/DBGA_pic.0b75c446dbcf44bffd09.jpg",
     "index.html": "/index.html",
     "main.12c76cec.css.map": "/static/css/main.12c76cec.css.map",
-    "main.7a9fe61e.js.map": "/static/js/main.7a9fe61e.js.map"
+    "main.2e93d5b5.js.map": "/static/js/main.2e93d5b5.js.map"
   },
   "entrypoints": [
     "static/css/main.12c76cec.css",
-    "static/js/main.7a9fe61e.js"
+    "static/js/main.2e93d5b5.js"
   ]
 }
