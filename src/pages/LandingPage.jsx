@@ -25,13 +25,11 @@ class LandingPage extends React.Component {
     await this.props.dispatch(loadData())
     this.setState({ loading: false });
   }
-
   renderContent() {
     while(this.state.loading=== true)
     {
       return <div>Loading...</div>;
     }
-     
     if (this.state.index === 1) {
       return <div className="container"><Welcome className="Welcome" handleClick={this.handleClick} /> <About /> <Footer /></div>;
     } else if (this.state.index === 2) {
@@ -45,19 +43,16 @@ class LandingPage extends React.Component {
       return <div className="container"><Welcome className="Welcome" handleClick={this.handleClick} /> <Notes /> <Footer /></div>;
     }
   }
-
   render() {
     return (
       <div className='Landing'>
-
+    
         {this.renderContent()}        
       </div>
     );
   }
 }
-
 const mapStateToProps = (state) => ({
   loadData: state.rootReducer,
 });
-
 export default connect(mapStateToProps)(LandingPage);

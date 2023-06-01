@@ -40,7 +40,7 @@ class About extends React.Component{
                             <p>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].subtitle}</p>
                             <p>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].description}</p>
                             <p>{this.props.loadData.language === "ESP"? "Mi historia:": "Short bio:"}</p>
-                            <p>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].bio.split(("{/n}")).map(e=><p>{e}</p>)}</p>
+                            <div>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].bio.split(("{/n}")).map(e=><p key={e}>{e}</p>)}</div>
                     
                         </div>
                     </div>

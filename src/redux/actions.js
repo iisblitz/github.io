@@ -10,8 +10,6 @@ export const loadData = () => {
       });
     };
   };
-
-
   export const loadArt = () => {
     return async function (dispatch) {
       const response = await axios.get(' https://shy-erin-panther-tux.cyclic.app/art');
@@ -21,7 +19,6 @@ export const loadData = () => {
       });
     };
   };
-
   export const loadTexts = () =>{
     return async function (dispatch){
       const response = await axios.get('https://shy-erin-panther-tux.cyclic.app/texts');
@@ -31,6 +28,22 @@ export const loadData = () => {
       })
     }
   }
+  export const loadCatalog = () =>{
+    return async function(dispatch){
+      const response = await axios.get('https://shy-erin-panther-tux.cyclic.app/catalog');
+      dispatch({
+        type: 'LOAD_CATALOG',
+        payload: response.data
+    })
+  }}
+ export const loadNotes = () => {
+  return async function(dispatch){
+    const response = await axios.get('https://shy-erin-panther-tux.cyclic.app/notes');
+    dispatch({
+      type: 'LOAD_NOTES',
+      payload: response.data
+  })
+ }}
   export const setLanguage = (language) => ({
     type: 'SET_LANGUAGE',
     payload: language

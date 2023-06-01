@@ -42,6 +42,7 @@ class Welcome extends React.Component {
                 <div className="langSel">
                 <button className="Wbutton esp" onClick={()=> this.handleLangChan()}>{this.props.loadData.language==="ESP"? "English":"Español"}</button>
                 </div>
+                <Link to='/Maintenance'>Try</Link>
         </div>)}
     }
 }

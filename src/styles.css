@@ -301,6 +301,16 @@ a {
 .Deliverable img {
   width: 100%;
 }
+
+.Catalog {
+  display: grid;
+}
+.Catalog a {
+  width: fit-content;
+}
+.CategoryCard {
+  width: fit-content;
+}
 @media only screen and (max-width: 600px) {
   .headerImg img {
     width: 50vw;

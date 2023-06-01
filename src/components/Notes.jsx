@@ -1,10 +1,25 @@
 import React from 'react'
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Notes extends React.Component {
+ 
   render() {
     return (
-      <div>Notes</div>
+      
+      <div>
+        {this.props.loadData.notes.filter(e => e.Language=== this.props.loadData.language).map(e=> 
+          <Link to={`/Notes/${e.Number}`}>
+          <div>
+            <p>{e.Title}</p>
+            <p>{e.Category}</p>
+            <p>{e.HeaderImage}</p>
+            <p>{e.SDescription}</p>
+          </div>
+          </Link>
+          )}
+        {console.log(this.props.loadData)}
+      </div>
     )
   }
 }
