@@ -9,7 +9,7 @@ class Notes extends React.Component {
       
       <div>
         {this.props.loadData.notes.filter(e => e.Language=== this.props.loadData.language).map(e=> 
-          <Link to={`/Notes/${e.Number}`}>
+          <Link to={`/Study/${e.Number}`}>
           <div>
             <p>{e.Title}</p>
             <p>{e.Category}</p>
@@ -18,7 +18,6 @@ class Notes extends React.Component {
           </div>
           </Link>
           )}
-        {console.log(this.props.loadData)}
       </div>
     )
   }
