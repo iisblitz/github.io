@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Welcome from '../components/Welcome'
 class Articles extends Component {
     constructor(props){
         super(props)
@@ -12,6 +13,7 @@ class Articles extends Component {
   render() {
     return (
       <div>
+        <Welcome/>
       {this.props.loadData.filter(e=>e.Language === this.state.Language).map(e=>
         <div>
         <p>{e.Title}</p>
