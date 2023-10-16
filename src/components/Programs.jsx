@@ -35,7 +35,6 @@ class Programs extends React.Component {
             <div>
             <Helmet title={"Projects"} desciption={"Projects in catalog"} type={"Project catalog"}/>
                 <div className="proDisplay">
-                    
                     {this.props.loadData.arts.filter(e => e.Langauge === this.props.loadData.language).map((e, index) =>
                     (
                         <div key={e.id} className={`Card ${e.Color}`} ref={this.CardsRef[index]}>

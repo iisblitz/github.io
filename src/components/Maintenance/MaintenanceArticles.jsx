@@ -22,7 +22,9 @@ class MaintenanceArticles extends React.Component {
       Tools:"",
       Status:"",
       Image:"",
-      Deliverable:""     } 
+      Deliverable:"",
+      Color:"" 
+        } 
     }
     this.handleAddArticle = this.handleAddArticle.bind(this);
     this.handleDeleteArticles = this.handleDeleteArticles.bind(this);
@@ -86,6 +88,7 @@ class MaintenanceArticles extends React.Component {
       <label>Status:</label><input name="Status" value={this.state.article.Status} type="text" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
       <label>Image:</label><input name="Image" value={this.state.article.Image} type="url" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
       <label>Deliverable:</label><input name="Deliverable" value={this.state.article.Deliverable} type="url" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
+      <label>Color:</label><input name="Color" value={this.state.article.Color} type="text" onChange={(e)=> this.handleChangeArticle(e.target.name, e.target.value)} />
       <button type="submit" onClick={this.handleAddArticle}>Add Timeline Event</button>
       </form>
       {this.props.loadData.arts.map(e=> (

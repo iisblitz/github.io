@@ -34,7 +34,8 @@ class Welcome extends React.Component {
                 <button className="WButton langSel" onClick={()=> this.handleLangChan()}>{this.props.loadData.language==="ESP"? "English":"Español"}</button>
                 </div>
                 }
-                {/*<Link to={"/maintenance"}>Maintenance</Link>*/}
+                {//<Link to={"/maintenance"}>Maintenance</Link>
+                }
             </div>
         )}
     }
