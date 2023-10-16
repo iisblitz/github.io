@@ -6,10 +6,9 @@ import Programs from '../components/Programs';
 import Timeline from '../components/Timeline';
 import Footer from '../components/Footer';
 import { loadData } from '../redux/actions'; // Import your action to load the data
-import { Helmet } from 'react-helmet';
 import Notes from '../components/Notes';
-import Image from '../Banner.png'
 import Articles from '../components/Articles';
+import { Helmet } from 'react-helmet-async';
 
 class LandingPage extends React.Component {
     constructor (props){
@@ -21,7 +20,8 @@ class LandingPage extends React.Component {
         this.handleClick = this.handleClick.bind(this)
     }
     handleClick(num){this.setState({index: num})} 
-  async componentDidMount() {
+  
+    async componentDidMount() {
     await this.props.dispatch(loadData())
     this.setState({ loading: false });
   }
@@ -30,25 +30,30 @@ class LandingPage extends React.Component {
     {
       return <div>Loading...</div>;
     }
-    if (this.state.index === 1) {
-      return <div className="container"><Welcome className="Welcome" handleClick={this.handleClick} /> <About /> <Footer /></div>;
+    if (this.state.index === 1) {      
+      return <div className="container">
+      <Helmet title=''/>
+      <Welcome className="Welcome" handleClick={this.handleClick} /> 
+      <About /> 
+      <Timeline />
+      <Programs />
+      </div>;
     } else if (this.state.index === 2) {
-      return <div className="container"><Welcome className="Welcome" handleClick={this.handleClick} /> <Timeline /> <Footer /></div>;
-    } else if (this.state.index === 3) {
-      return <div className="container"><Welcome className="Welcome" handleClick={this.handleClick} /> <Programs /> <Footer /></div>;
-    } else if (this.state.index === 4) {
-      return <div className="container"><Welcome className="Welcome" handleClick={this.handleClick} /> <Articles /> <Footer /></div>;
+      return <div className="container"><Welcome className="Welcome" handleClick={this.handleClick} /> <Articles /></div>;
     }
     else {
-      return <div className="container"><Welcome className="Welcome" handleClick={this.handleClick} /> <Notes /> <Footer /></div>;
+      return <div className="container"><Welcome className="Welcome" handleClick={this.handleClick} /> <Notes /> </div>;
     }
   }
   render() {
     return (
+      <div className='fullpage'>
       <div className='Landing'>
-    
         {this.renderContent()}        
       </div>
+      <Footer/>
+      </div>
+      
     );
   }
 }

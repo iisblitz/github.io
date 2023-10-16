@@ -1,13 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 class Notes extends React.Component {
  
   render() {
     return (
       
-      <div>
+      <div className='NotesCat'>
+           <Helmet title={"Notes"} desciption={"Notes taken of articles, lessons and certifications"} type={"Lessons catalog"}/>
         {this.props.loadData.notes.filter(e => e.Language=== this.props.loadData.language).map(e=> 
           <Link to={`/Study/${e.Number}`}>
           <div>

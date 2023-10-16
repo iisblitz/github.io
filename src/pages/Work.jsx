@@ -35,7 +35,6 @@ class Work extends React.Component {
         return(
           <div className="workTemplate">
             <Welcome/>
-            
             <h1 className="workTitle">{details.filter(e=>e.Language=== this.props.loadData.language)[0].BusinessName}</h1>
             <div className="workHeaders">
               <div className="workHeaderImg">
@@ -47,7 +46,7 @@ class Work extends React.Component {
               </div>
               <div className="workDataTL">
                 <h4> {this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].ti}: {details.filter(e=>e.Language=== this.props.loadData.language)[0].Begin} </h4>
-                <h4>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].te}: {details.filter(e=>e.Language=== this.props.loadData.language)[0].End}</h4>
+                <h4>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].te}: {details.filter(e=>e.Language=== this.props.loadData.language)[0].End=== "0001-01-01" ? "Actual" : details.filter(e=>e.Language=== this.props.loadData.language)[0].End}</h4>
                 <p>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].loc}: {details.filter(e=>e.Language=== this.props.loadData.language)[0].Location}</p>
               </div>
             </div>

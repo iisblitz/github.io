@@ -21,9 +21,10 @@ class Timeline extends React.Component {
     this.setState((prevState) => ({
       [propertyName]: !prevState[propertyName]
     }));
+
   };
   render() {
-    
+    this.props.loadData.time.map(e=> e.End === "0001-01-01"? e.End = "Actual": e.End)
     return (
 <div className="Timeline-Window">
         <div className="TL-Menu">
@@ -37,9 +38,9 @@ class Timeline extends React.Component {
             <i className="fa-solid fa-person-walking-luggage" /><p>{this.props.loadData.language==="ESP"? "Pasa tiempos":"Hobbies"}</p>
           </button>
         </div>
-        
+        <div className='VTL'>
                 <VerticalTimeline>
-        {this.props.loadData && this.props.loadData.time.filter(e=> this.state[e.Category]===true).filter(e=> e.Language === this.props.loadData.language).sort((a, b) => new Date(b.End) - new Date(a.End)).map(e => (
+        {this.props.loadData && this.props.loadData.time.filter(e=> this.state[e.Category]===true).filter(e=> e.Language === this.props.loadData.language).sort((a, b) => new Date(b.Begin) - new Date(a.Begin)).map(e => (
            <VerticalTimelineElement 
               key={e.id}
               className="vertical-timeline-element--work"
@@ -68,7 +69,7 @@ class Timeline extends React.Component {
             </VerticalTimelineElement>
       ))}
       </VerticalTimeline>
-              
+      </div>
     </div>
     );
   }

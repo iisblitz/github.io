@@ -6,9 +6,12 @@ import Projects from "./pages/Projects";
 import Maintenance from "./pages/Maintenance";
 import Studies from "./pages/Studies";
 import Articles from "./pages/Articles"
+import {HelmetProvider} from 'react-helmet-async'
 
 function App() {
+  const helmetContext = {}
   return (
+    <HelmetProvider context={helmetContext}>
     <Router>
       <Routes className="root">
         <Route path='/' element={<LandingPage />}></Route>
@@ -19,6 +22,8 @@ function App() {
         <Route path='/Maintenance' element={<Maintenance/>}/>
       </Routes>
     </Router>
+    </HelmetProvider>
+
   );
 }
 

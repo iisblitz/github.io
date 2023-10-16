@@ -2,8 +2,6 @@ import pic from '../recursos/DBGA_pic.jpg'
 import { connect } from 'react-redux';
 import React from 'react';
 
-
-
 class About extends React.Component{
     constructor(props) {
         super(props)
@@ -44,11 +42,9 @@ class About extends React.Component{
                     
                         </div>
                     </div>
-               
                 )
             }
         }
-
 }
 
 const mapStateToProps = (state) => ({

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom'
 
@@ -32,13 +33,14 @@ class Programs extends React.Component {
     render() {
         return (
             <div>
+            <Helmet title={"Projects"} desciption={"Projects in catalog"} type={"Project catalog"}/>
                 <div className="proDisplay">
+                    
                     {this.props.loadData.arts.filter(e => e.Langauge === this.props.loadData.language).map((e, index) =>
                     (
-
                         <div key={e.id} className={`Card ${e.Color}`} ref={this.CardsRef[index]}>
                             <Link to={`/Project/${e.number}`} className={`proCards`}>
-                                <div className="img">
+                                <div className="P-img">
                                     <img src={e.Logo} alt="workLogo" />
                                 </div>
                                 <div className="texts">
@@ -47,8 +49,7 @@ class Programs extends React.Component {
                                     <p>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].desc}: {e.ShortDescription}</p>
                                     <p>{this.props.loadData.language === "ESP" ? "Duración" : "Duration"}: {e.TimeConstraints}</p>
                                 </div>
-                                <div className={`BOK`}>
-
+                                    <div className={`BOK`}>
                                     <h3>{e.Education}</h3>
                                 </div>
                             </Link>

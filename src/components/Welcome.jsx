@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import {setLanguage} from '../redux/actions'
 class Welcome extends React.Component {
@@ -23,27 +23,20 @@ class Welcome extends React.Component {
      else{
         let url = window.location.href.split("/")
         return (
-     <div className="header">
-                <div className="headerImg">
-                <Link to="../">
-                <img src="https://i.postimg.cc/QN1V26jF/Logo-removebg-preview.png" alt="header" />
-                </Link>
-                </div>
+    <div className="header">
+        
                 {url[3] ?
-                <div/>:
+            <div/>:
                 <div className="Menu">
                 <button className="Wbutton" onClick={event=> this.props.handleClick(1)}>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].main}</button>
-                <button className="Wbutton" onClick={event=> this.props.handleClick(2)}>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].etitle}</button>
-                <button className="Wbutton" onClick={event=> this.props.handleClick(3)}>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].a3}</button>
-                <button className="Wbutton" onClick={event=> this.props.handleClick(4)}>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].articles}</button>
-                <button className="Wbutton" onClick={event=> this.props.handleClick(5)}>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].notes}</button>
+                <button className="Wbutton" onClick={event=> this.props.handleClick(2)}>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].articles}</button>
+                <button className="Wbutton" onClick={event=> this.props.handleClick(3)}>{this.props.loadData.texts.filter((e) => e.language === this.props.loadData.language)[0].notes}</button>
+                <button className="WButton langSel" onClick={()=> this.handleLangChan()}>{this.props.loadData.language==="ESP"? "English":"Español"}</button>
                 </div>
                 }
-                <div className="langSel">
-                <button className="Wbutton esp" onClick={()=> this.handleLangChan()}>{this.props.loadData.language==="ESP"? "English":"Español"}</button>
-                </div>
-                
-        </div>)}
+                {/*<Link to={"/maintenance"}>Maintenance</Link>*/}
+            </div>
+        )}
     }
 }
 const mapStateToProps = (state) => ({
