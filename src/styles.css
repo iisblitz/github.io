@@ -393,7 +393,7 @@ a {
 
 /*Notes - sirve para poner la seccion de notas en formato cornell*/
 .fullStudy {
-  width: 85vh;
+  width: 85vw;
   background-color: rgba(100, 100, 100, 0.5);
   border: 1px white solid;
   border-radius: 15px;
@@ -409,17 +409,20 @@ a {
   border: 1px solid white;
   border-radius: 15px;
 }
+
+.MainNotes {
+  text-align: justify;
+}
 .Notes {
-  width: 85vw;
+  width: 95%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   margin-inline: auto;
 }
 .NotesTitle {
   text-align: center;
-  width: 100%;
   border-bottom: 1px white;
 }
 .Cornell {
@@ -430,12 +433,9 @@ a {
 
 .Cues {
   border-right: white solid;
-  width: 25vw;
+  padding-right: 2vw;
 }
 
-.MainNotes {
-  width: 60vw;
-}
 .Summary {
   border-top: white solid;
 }

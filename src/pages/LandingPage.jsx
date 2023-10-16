@@ -32,7 +32,7 @@ class LandingPage extends React.Component {
     }
     if (this.state.index === 1) {      
       return <div className="container">
-      <Helmet title=''/>
+      <Helmet title="David Gonzalez's Protfolio" description='This site contains experiences and projects by David Gonzalez'/>
       <Welcome className="Welcome" handleClick={this.handleClick} /> 
       <About /> 
       <Timeline />
